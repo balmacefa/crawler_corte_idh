@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "node index.js",
-    "oc": "node opiniones_consultivas.js"
+    "main": "node crawler_corte_idh.js"
   },
   "keywords": [],
   "author": "",
