@@ -16,34 +16,31 @@ Before running the script, ensure you have Node.js installed on your machine. Th
 1. Clone the repository to your local machine.
 2. Navigate to the cloned directory and run `npm install` to install dependencies.
 
+## Usage
 
-Usage
 The application can be run using the following npm script:
 
-bash
-Copy code
+```shell
 npm run main
+```
+
 This will start the web scraping process, targeting the predefined URLs in the script. Downloaded files will be sorted into pdf and doc directories within a data folder.
 
-Structure
+## Structure
+
 The main functionality is encapsulated in crawler_corte_idh.js. The script performs the following actions:
 
 Launches a headless browser to navigate to specified URLs.
 Scrapes for document links (PDF and DOC/DOCX).
 Downloads the documents into respective directories.
-Dependencies
+
+## Dependencies
+
 Puppeteer: A Node library for controlling Google Chrome or Chromium.
 License
+
 This project is licensed under the ISC License.
 
-Disclaimer
+## Disclaimer
+
 This tool is intended for educational and research purposes only. Please ensure you have permission to scrape and download content from the target website.
-
-vbnet
-Copy code
-
-Feel free to modify this README to include additional details like contact information, contribution guidelines, or more specific usage instructions as per your project's needs.
-
-
-
-
