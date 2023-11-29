@@ -2,22 +2,36 @@ const fs = require("fs");
 const puppeteer = require("puppeteer");
 
 const dataDir = process.env.DATA_DIR || "./data";
+console.log(`Data directory set to: ${dataDir}`);
+
 const runForURL = async (url) => {
-  const browser = await puppeteer.launch();
+  console.log(`Initializing browser for URL: ${url}`);
+  const browser = await puppeteer.launch({
+    headless: false,
+  });
+  console.log(`Browser launched for URL: ${url}`);
   const page = await browser.newPage();
 
   try {
+    console.log(`Navigating to URL: ${url}`);
     await page.goto(url);
+    console.log(`Waiting for selector at URL: ${url}`);
     await page.waitForSelector(".search-result a");
+    console.log(`Selector found at URL: ${url}`);
 
     await page._client().send("Page.setDownloadBehavior", {
       behavior: "allow",
       downloadPath: dataDir,
     });
 
-    await page.exposeFunction("fileExists", (f) =>
-      fs.existsSync(`${dataDir}/${f}`)
-    );
+    await page.exposeFunction("fileExists", (f) => {
+      const exists = fs.existsSync(`${dataDir}/${f}`);
+      console.log(
+        `File check for ${f}: ${exists ? "Exists" : "Does not exist"}`
+      );
+      return exists;
+    });
+
     const resultsSelector = ".search-result a";
     const links = (
       await page.evaluate((resultsSelector) => {
@@ -38,6 +52,7 @@ const runForURL = async (url) => {
                 )) &&
               anchor.href.endsWith("_esp.pdf")
             ) {
+              console.log(`Downloading file: ${filename}`);
               anchor.setAttribute("download", filename);
               anchor.click();
               return filename;
@@ -47,22 +62,26 @@ const runForURL = async (url) => {
       }, resultsSelector)
     ).filter((x) => !!x);
 
-    // Wait for downloads to finish an arbitrary amount of time, I couldn't find
-    // any callback.
+    console.log(`Initiating wait for downloads to finish for URL: ${url}`);
     await page.waitForTimeout(20000);
+    console.log(`Wait completed for URL: ${url}`);
 
     await browser.close();
+    console.log(`Browser closed for URL: ${url}`);
   } catch (e) {
+    console.error(`Error processing URL: ${url}`, e);
     await page.screenshot({
-      path: "failed.jpg",
+      path: `failed_${url.replace(/[^a-z0-9]/gi, "_")}.jpg`,
     });
     throw e;
   }
 };
 
 (async () => {
+  console.log("Crawler process initiated");
   await Promise.all([
     runForURL("https://www.corteidh.or.cr/casos_sentencias.cfm"),
     runForURL("https://www.corteidh.or.cr/opiniones_consultivas.cfm"),
   ]);
+  console.log("Crawler process completed");
 })();
