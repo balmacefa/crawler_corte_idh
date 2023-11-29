@@ -4,19 +4,14 @@ const path = require("path");
 const http = require("http");
 const https = require("https");
 
-const baseDir = "./data";
-const pdfDir = path.join(baseDir, "pdf");
-const docDir = path.join(baseDir, "doc");
-
-// Ensure PDF and DOC directories exist
-[baseDir, pdfDir, docDir].forEach((dir) => {
+function createDirectory(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
     console.log(`Created directory: ${dir}`);
   } else {
     console.log(`Directory already exists: ${dir}`);
   }
-});
+}
 
 function getFileNameFromURL(url) {
   return url.split("/").pop();
@@ -65,22 +60,27 @@ async function processAndDownloadFile(
   }
 }
 
-const initial_url = "https://www.corteidh.or.cr/casos_sentencias.cfm";
+async function scrapeWebsite(url, baseDir) {
+  const pdfDir = path.join(baseDir, "pdf");
+  const docDir = path.join(baseDir, "doc");
 
-(async () => {
-  console.log("Launching browser...");
-  const browser = await puppeteer.launch({
-    headless: true,
-  });
+  // Create PDF and DOC directories
+  createDirectory(pdfDir);
+  createDirectory(docDir);
+
+  console.log(`Launching browser for ${url}...`);
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  console.log("Navigating to website...");
-  await page.goto(initial_url);
+  console.log(`Navigating to ${url}...`);
+  await page.goto(url);
   console.log("Waiting for content to load...");
   await page.waitForSelector("ul#ul_datos");
-  await page.waitForSelector("li.tr_normal.search-result.row"); // Wait for at least one search result
+  await page.waitForSelector("li.tr_normal.search-result.row");
 
   const searchResults = await page.$$("li.tr_normal.search-result.row");
-  console.log(`Found ${searchResults.length} search results. Processing...`);
+  console.log(
+    `Found ${searchResults.length} search results at ${url}. Processing...`
+  );
 
   for (const result of searchResults) {
     await processAndDownloadFile(
@@ -99,5 +99,16 @@ const initial_url = "https://www.corteidh.or.cr/casos_sentencias.cfm";
 
   console.log("Closing browser...");
   await browser.close();
-  console.log("Crawler finished.");
+  console.log(`Finished scraping ${url}.`);
+}
+
+(async () => {
+  await scrapeWebsite(
+    "https://www.corteidh.or.cr/opiniones_consultivas.cfm",
+    "./data/opiniones_consultivas"
+  );
+  await scrapeWebsite(
+    "https://www.corteidh.or.cr/casos_sentencias.cfm",
+    "./data/casos_sentencias"
+  );
 })();
