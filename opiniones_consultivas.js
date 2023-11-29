@@ -65,6 +65,8 @@ async function processAndDownloadFile(
   }
 }
 
+const initial_url = "https://www.corteidh.or.cr/casos_sentencias.cfm";
+
 (async () => {
   console.log("Launching browser...");
   const browser = await puppeteer.launch({
@@ -72,7 +74,7 @@ async function processAndDownloadFile(
   });
   const page = await browser.newPage();
   console.log("Navigating to website...");
-  await page.goto("https://www.corteidh.or.cr/opiniones_consultivas.cfm");
+  await page.goto(initial_url);
   console.log("Waiting for content to load...");
   await page.waitForSelector("ul#ul_datos");
   await page.waitForSelector("li.tr_normal.search-result.row"); // Wait for at least one search result
