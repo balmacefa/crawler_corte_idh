@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "node crawler_corte_idh.js"
+    "main": "node crawler_corte_idh.js",
+    "parser": "node doc_parser_html.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mammoth": "^1.6.0",
     "puppeteer": "^21.5.2"
   }
 }
