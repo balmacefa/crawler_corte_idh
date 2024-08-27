@@ -17,6 +17,13 @@
       "name": "Launch opiniones consultivas",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\opiniones_consultivas.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch crawler_cidh",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\crawler_cidh.js"
     }
   ]
 }
