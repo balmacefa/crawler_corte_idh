@@ -126,9 +126,9 @@ async function scrapeWebsite(url, baseDir) {
     `Found ${searchResults.length} search results at ${url}. Processing...`
   );
 
-  for (const result of searchResults) {
-    await processAndDownloadFile(result, baseDir);
-  }
+  await Promise.all(
+    searchResults.map((result) => processAndDownloadFile(result, baseDir))
+  );
 
   console.log("Closing browser...");
   await browser.close();
