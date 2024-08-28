@@ -1,6 +1,4 @@
-
-<html>
-<head>
+<html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
@@ -23,13 +21,7 @@ a:active {color: rgb(0,154,205); text-decoration: none}
 </head>
 <body>
 <p style="margin-top: 0; margin-bottom: 0" align="center"><font size="2" face="Verdana">
-<script type="text/javascript" style="display:none">
-//<![CDATA[
-window.__mirage2 = {petok:"Cx.7WIcDLu2hqj1iMpxii4GIobh64QZenPrgVpn2fkE-86400-0.0.1.1"};
-//]]>
-</script>
-<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/04b3eb47/cloudflare-static/mirage2.min.js"></script>
-<img border="0" width="600" height="100" data-cfsrc="../../images/CIDHHeader.GIF" style="display:none;visibility:hidden;"><noscript><img border="0" src="../../images/CIDHHeader.GIF" width="600" height="100"></noscript></font></p>
+<img border="0" src="../../images/CIDHHeader.GIF" width="600" height="100"></font></p>
 <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></p>
 <p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -37,9 +29,9 @@ window.__mirage2 = {petok:"Cx.7WIcDLu2hqj1iMpxii4GIobh64QZenPrgVpn2fkE-86400-0.0
 <div align="center">
 <center>
 <table border="0" cellpadding="2" width="640">
-<tr>
+<tbody><tr>
 <td>
-</center>
+
 <p class="MsoBodyText" align="center" style="margin-right:4.5pt;text-align:center;
 tab-stops:.5in 1.0in 99.0pt"><b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">Parte
 II</font></span></b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">&nbsp;<o:p>
@@ -49,109 +41,109 @@ II</font></span></b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font siz
 tab-stops:.5in 1.0in 99.0pt"><b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">CAMPOS
 EN LOS CUALES HAN DE TOMARSE MEDIDAS PARA DAR MAYOR<br>
 VIGENCIA A LOS DERECHOS HUMANOS, CONFORME LO PRESCRIBE LA<br>
-DECLARACIÓN AMERICANA DE LOS DERECHOS Y DEBERES DEL HOMBRE</font></span></b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><o:p>
+DECLARACIÃ“N AMERICANA DE LOS DERECHOS Y DEBERES DEL HOMBRE</font></span></b><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Esta Comisión, apreciando con toda objetividad la situación
-vigente en la generalidad de los países americanos en cuanto al respeto y
-adecuada protección de los derechos humanos, no puede menos que reconocer
-que, si bien se han obtenido ciertos avances en relación con algunos de
-los llamados derechos sociales, económicos y culturales, se registran
-graves regresiones en el campo de los denominados derechos civiles y políticos.&nbsp;<o:p>
+</span>Esta ComisiÃ³n, apreciando con toda objetividad la situaciÃ³n
+vigente en la generalidad de los paÃ­ses americanos en cuanto al respeto y
+adecuada protecciÃ³n de los derechos humanos, no puede menos que reconocer
+que, si bien se han obtenido ciertos avances en relaciÃ³n con algunos de
+los llamados derechos sociales, econÃ³micos y culturales, se registran
+graves regresiones en el campo de los denominados derechos civiles y polÃ­ticos.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Amplios programas de construcción de viviendas para los sectores
-económicamente más débiles, la extensión y el perfeccionamiento de los
-servicios de salud pública, un intenso esfuerzo por ampliar la capacidad
-de los centros de enseñanza de tipo convencional y su complementación
-mediante el empleo de nuevas técnicas, para tratar de atender las
-exigencias de una población en movimiento expansivo, representan
+</span>Amplios programas de construcciÃ³n de viviendas para los sectores
+econÃ³micamente mÃ¡s dÃ©biles, la extensiÃ³n y el perfeccionamiento de los
+servicios de salud pÃºblica, un intenso esfuerzo por ampliar la capacidad
+de los centros de enseÃ±anza de tipo convencional y su complementaciÃ³n
+mediante el empleo de nuevas tÃ©cnicas, para tratar de atender las
+exigencias de una poblaciÃ³n en movimiento expansivo, representan
 indiscutibles victorias en la lucha por consolidar el derecho al bienestar,
-a la preservación de la salud, y a la educación, consagrados por la
-Declaración Americana.&nbsp;<o:p>
+a la preservaciÃ³n de la salud, y a la educaciÃ³n, consagrados por la
+DeclaraciÃ³n Americana.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Pero, al mismo tiempo, el empleo generalizado de las técnicas de
-la violencia en amplias áreas de nuestro Continente, como medio para
-intentar imponer transformaciones de orden político y social, ha generado
-situaciones de enorme tensión, caracterizadas por graves y frecuentes
+</span>Pero, al mismo tiempo, el empleo generalizado de las tÃ©cnicas de
+la violencia en amplias Ã¡reas de nuestro Continente, como medio para
+intentar imponer transformaciones de orden polÃ­tico y social, ha generado
+situaciones de enorme tensiÃ³n, caracterizadas por graves y frecuentes
 violaciones de derechos humanos fundamentales tales como el derecho a la
-vida, a la integridad física, a la libertad, a la libre información y
-expresión del pensamiento, así como de los derechos políticos,
-especialmente el de sufragio. En tal sentido, “mutatis mutandi”, se
-mantiene la situación descrita en nuestro Informe correspondiente al año
+vida, a la integridad fÃ­sica, a la libertad, a la libre informaciÃ³n y
+expresiÃ³n del pensamiento, asÃ­ como de los derechos polÃ­ticos,
+especialmente el de sufragio. En tal sentido, â€œmutatis mutandiâ€, se
+mantiene la situaciÃ³n descrita en nuestro Informe correspondiente al aÃ±o
 pasado.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Ha examinado muy especialmente la Comisión la práctica –aparentemente
-exagerada—que se está haciendo en algunas de nuestras Repúblicas de la
-facultad constitucional acordada al Poder Ejecutivo –generalmente bajo
-la vigilancia del Congreso—de detener, trasladar o expatriar personas
-por motivos de seguridad política, en situaciones excepcionales. Resulta
-impresionante la comprobación de que, por este medio, hay hombres y
+</span>Ha examinado muy especialmente la ComisiÃ³n la prÃ¡ctica â€“aparentemente
+exageradaâ€”que se estÃ¡ haciendo en algunas de nuestras RepÃºblicas de la
+facultad constitucional acordada al Poder Ejecutivo â€“generalmente bajo
+la vigilancia del Congresoâ€”de detener, trasladar o expatriar personas
+por motivos de seguridad polÃ­tica, en situaciones excepcionales. Resulta
+impresionante la comprobaciÃ³n de que, por este medio, hay hombres y
 mujeres que son privados de su libertad durante muchos meses, sin que se
-les haya formulado la menor imputación ni se les haya sometido a la
-Justicia. Respecto de estas personas, por lo demás, en algunos países no
+les haya formulado la menor imputaciÃ³n ni se les haya sometido a la
+Justicia. Respecto de estas personas, por lo demÃ¡s, en algunos paÃ­ses no
 se admite que puedan requerir la asistencia de abogado ni se reconoce la
-posibilidad de que, a su respecto, se pueda introducir con éxito un
-recurso de “habeas corpus”.&nbsp;<o:p>
+posibilidad de que, a su respecto, se pueda introducir con Ã©xito un
+recurso de â€œhabeas corpusâ€.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>La Comisión no ignora las razones que militan en favor del
+</span>La ComisiÃ³n no ignora las razones que militan en favor del
 reconocimiento de poderes extraordinarios al Ejecutivo en situaciones
-excepcionales, tales como las que se generan por una conmoción interna o
-un ataque exterior; pero toma en consideración que la doctrina más
-admitida en materia internacional, por ser la que inspira la Convención
-Americana de San José de Costa Rica (Art. 27), así como el Pacto
-Internacional de Derechos Civiles y Políticos de las Naciones Unidas
-(Art. 4º) y la Convención Europea de Protección de los Derechos Humanos
-(Art. 15), ponen límites precisos al ejercicio de esos poderes
+excepcionales, tales como las que se generan por una conmociÃ³n interna o
+un ataque exterior; pero toma en consideraciÃ³n que la doctrina mÃ¡s
+admitida en materia internacional, por ser la que inspira la ConvenciÃ³n
+Americana de San JosÃ© de Costa Rica (Art. 27), asÃ­ como el Pacto
+Internacional de Derechos Civiles y PolÃ­ticos de las Naciones Unidas
+(Art. 4Âº) y la ConvenciÃ³n Europea de ProtecciÃ³n de los Derechos Humanos
+(Art. 15), ponen lÃ­mites precisos al ejercicio de esos poderes
 extraordinarios en defensa de los derechos humanos, y cree necesario
 armonizar las necesidades de la defensa del orden institucional
-regularmente establecido con la protección de los atributos fundamentales
+regularmente establecido con la protecciÃ³n de los atributos fundamentales
 de la personalidad.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>La Comisión comprueba, además, que es motivo de grave preocupación
-en muchos países americanos la práctica de trasladar a personas
-detenidas de uno a otro establecimiento de detención o campo de
+</span>La ComisiÃ³n comprueba, ademÃ¡s, que es motivo de grave preocupaciÃ³n
+en muchos paÃ­ses americanos la prÃ¡ctica de trasladar a personas
+detenidas de uno a otro establecimiento de detenciÃ³n o campo de
 prisioneros, muchas veces situados a gran distancia los unos de los otros,
 sin conocimiento de sus familias o defensores, causando profunda angustia
-a las primeras y dificultando o imposibilitando la acción de los segundos,
+a las primeras y dificultando o imposibilitando la acciÃ³n de los segundos,
 y sin que se adopten las medidas necesarias para que tales traslados sean
 comunicados a una oficina central que se encargue de procesar la
-documentación correspondiente y de informar a los interesados.<o:p>
+documentaciÃ³n correspondiente y de informar a los interesados.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" align="center" style="margin-right:4.5pt;text-align:center;
-tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><b><a name="RECOMENDACIONES DE LA COMISIÓN">RECOMENDACIONES
-DE LA COMISIÓN</a></b>&nbsp;<o:p>
+tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><b><a name="RECOMENDACIONES DE LA COMISIÃ“N">RECOMENDACIONES
+DE LA COMISIÃ“N</a></b>&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En mérito a las consideraciones que anteceden, la Comisión estima
+</span>En mÃ©rito a las consideraciones que anteceden, la ComisiÃ³n estima
 del caso recomendar:&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
-0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">1º<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Que se dicte en todos los Estados normas precisas –-de
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">1Âº<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Que se dicte en todos los Estados normas precisas â€“-de
 conformidad con lo que dispongan las disposiciones constitucionales en
 vigor--, tendientes a impedir que las privaciones de libertad dispuestas
 en ejercicio de las facultades que las Constituciones suelen conceder para
-los casos de excepción, se extiendan más allá de lo absolutamente
+los casos de excepciÃ³n, se extiendan mÃ¡s allÃ¡ de lo absolutamente
 indispensable para el mantenimiento del orden institucional regularmente
 establecido.<o:p>
 </o:p>
@@ -161,17 +153,17 @@ establecido.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
-0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">2º<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">2Âº<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Que se dicte en todos los Estados normas precisas --de conformidad
 con lo que dispongan las disposiciones constitucionales en vigor--,
-tendientes a precisar los alcances del recurso de “habeas corpus” o de
+tendientes a precisar los alcances del recurso de â€œhabeas corpusâ€ o de
 amparo respecto de personas detenidas en ejercicio de facultades
-extraordinarias, poderes de excepción o estado de sitio, prescribiendo
-que la interposición de uno de esos recursos ante un juez civil obliga a
+extraordinarias, poderes de excepciÃ³n o estado de sitio, prescribiendo
+que la interposiciÃ³n de uno de esos recursos ante un juez civil obliga a
 la autoridad aprehensora, en todo caso, a llevar el detenido a presencia
-del juez, a remitir a éste copia completa de la orden de detención, a
-expresarle con toda precisión dónde se está cumpliendo la misma, a
-exhibir la documentación que acredite la regularidad de la detención y a
+del juez, a remitir a Ã©ste copia completa de la orden de detenciÃ³n, a
+expresarle con toda precisiÃ³n dÃ³nde se estÃ¡ cumpliendo la misma, a
+exhibir la documentaciÃ³n que acredite la regularidad de la detenciÃ³n y a
 comunicarle de inmediato cualquier ulterior traslado a otro lugar.<o:p>
 </o:p>
 </font></span></p>
@@ -180,18 +172,18 @@ comunicarle de inmediato cualquier ulterior traslado a otro lugar.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
-0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">3º<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Que se instituya, en los Estados que no posean una organización de
-ese tipo, una oficina centralizadora de información acerca de personas
-privadas de su libertad a cualquier título. A tal efecto, los
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">3Âº<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Que se instituya, en los Estados que no posean una organizaciÃ³n de
+ese tipo, una oficina centralizadora de informaciÃ³n acerca de personas
+privadas de su libertad a cualquier tÃ­tulo. A tal efecto, los
 funcionarios que ejerzan la jefatura de los establecimientos en que se
 encuentren tales personas, dentro del breve plazo que se determine y bajo
-la más severa responsabilidad, deberán remitir una relación
+la mÃ¡s severa responsabilidad, deberÃ¡n remitir una relaciÃ³n
 circunstanciada de ellas, haciendo constar el nombre que expresan tener y
 el que resulte de su documento de identidad, si ambos no coincidieran; la
-fecha del nacimiento; la dirección completa de su último domicilio o del
-de su familia. La oficina central debería procesar todos esos datos, así
-como los que telefónicamente o por cualquier otro medio rápido envíen
+fecha del nacimiento; la direcciÃ³n completa de su Ãºltimo domicilio o del
+de su familia. La oficina central deberÃ­a procesar todos esos datos, asÃ­
+como los que telefÃ³nicamente o por cualquier otro medio rÃ¡pido envÃ­en
 los jefes de los establecimientos, dentro de las 24 horas de ocurrido todo
 nuevo egreso o ingreso, para informar a quienes declaren ser parientes de
 las personas a las que se presuma detenidas o a cualquier abogado que lo
@@ -229,40 +221,40 @@ RESPECTO DE COMUNICACIONES RECIBIDAS<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En el período de tiempo cubierto por este informe, la Comisión
-consideró 626 comunicaciones o reclamaciones de personas y entidades en
+</span>En el perÃ­odo de tiempo cubierto por este informe, la ComisiÃ³n
+considerÃ³ 626 comunicaciones o reclamaciones de personas y entidades en
 las cuales se denunciaban 617 casos concretos de presuntas violaciones de
-los derechos humanos consignados en la Declaración Americana de los
-Derechos y Deberes del Hombre. Además recibió 334 comunicaciones de carácter
-informativo sobre la situación general de estos derechos en los países
+los derechos humanos consignados en la DeclaraciÃ³n Americana de los
+Derechos y Deberes del Hombre. AdemÃ¡s recibiÃ³ 334 comunicaciones de carÃ¡cter
+informativo sobre la situaciÃ³n general de estos derechos en los paÃ­ses
 americanos.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Concluida la tramitación de cada caso (Artículos 37 a 51 del
-Reglamento), la Comisión entró a examinar las pruebas suministradas por
-el gobierno aludido o por el denunciante o las que la propia Comisión
-pudo recoger de conformidad con el Artículo 51 del citado Reglamento
-aplicando, cuando fuere procedente, la regla de presunción de verdad
-contenida en el Artículo 51.&nbsp;<o:p>
+</span>Concluida la tramitaciÃ³n de cada caso (ArtÃ­culos 37 a 51 del
+Reglamento), la ComisiÃ³n entrÃ³ a examinar las pruebas suministradas por
+el gobierno aludido o por el denunciante o las que la propia ComisiÃ³n
+pudo recoger de conformidad con el ArtÃ­culo 51 del citado Reglamento
+aplicando, cuando fuere procedente, la regla de presunciÃ³n de verdad
+contenida en el ArtÃ­culo 51.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>De conformidad con su Estatuto [Artículo 9 (bis)], considera la
-Comisión que, en su informe anual a la Asamblea General, corresponde
-hacer observaciones solamente sobre los casos cuya tramitación y examen
-hayan concluido en el período cubierto por el informe y en los cuales se
-haya comprobado desconocimiento de los derechos humanos y, además, se
+</span>De conformidad con su Estatuto [ArtÃ­culo 9 (bis)], considera la
+ComisiÃ³n que, en su informe anual a la Asamblea General, corresponde
+hacer observaciones solamente sobre los casos cuya tramitaciÃ³n y examen
+hayan concluido en el perÃ­odo cubierto por el informe y en los cuales se
+haya comprobado desconocimiento de los derechos humanos y, ademÃ¡s, se
 hayan formulado al gobierno contra el cual estaba dirigida la denuncia las
-recomendaciones convenientes, en aplicación de lo dispuesto en el Artículo
+recomendaciones convenientes, en aplicaciÃ³n de lo dispuesto en el ArtÃ­culo
 52 de su Reglamento.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En tal virtud, cumpliendo lo prescrito en la Resolución XXII de la
+</span>En tal virtud, cumpliendo lo prescrito en la ResoluciÃ³n XXII de la
 Segunda Conferencia Interamericana Extraordinaria (apartado 4), en la
-Carta de la OEA (Artículo 150) y en el Artículo 57 de su Reglamento, la
-Comisión somete a la consideración de la Asamblea General las
+Carta de la OEA (ArtÃ­culo 150) y en el ArtÃ­culo 57 de su Reglamento, la
+ComisiÃ³n somete a la consideraciÃ³n de la Asamblea General las
 observaciones que considera apropiadas respecto del caso que llena las
 condiciones arriba indicadas.<o:p>
 </o:p>
@@ -274,7 +266,7 @@ condiciones arriba indicadas.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><u>Caso Nº 1757</u>, presentado con comunicación de 18 de
+</span><u>Caso NÂº 1757</u>, presentado con comunicaciÃ³n de 18 de
 noviembre de 1972, denunciando, en resumen, lo siguiente:&nbsp;<o:p>
 </o:p>
 </font></span></p>
@@ -282,10 +274,10 @@ noviembre de 1972, denunciando, en resumen, lo siguiente:&nbsp;<o:p>
 0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;tab-stops:.5in 1.0in 99.0pt" align="justify"><font size="2" face="Verdana"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>i)<span style="mso-tab-count:1">&nbsp;</span></span></font>&nbsp;&nbsp;&nbsp;&nbsp;
 <font size="2" face="Verdana"><span lang="ES-AR" style="mso-ansi-language:ES-AR">Que
-en la República de Bolivia se estaba llevando a cabo represión que se
-había generalizado a diversos sectores populares, habiendo sido
-internadas muchas mujeres en campos de concentración y cárceles donde
-habían sido víctimas de torturas.<o:p>
+en la RepÃºblica de Bolivia se estaba llevando a cabo represiÃ³n que se
+habÃ­a generalizado a diversos sectores populares, habiendo sido
+internadas muchas mujeres en campos de concentraciÃ³n y cÃ¡rceles donde
+habÃ­an sido vÃ­ctimas de torturas.<o:p>
 </o:p>
 </span></font></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
@@ -295,10 +287,10 @@ habían sido víctimas de torturas.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
 0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>ii)<span style="mso-tab-count:1">&nbsp;</span><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Que un grupo de bolivianos se dirigió a la Cruz Roja Internacional
-la cual, según informes obtenidos por el reclamante, envió una comisión
-a Bolivia a fin de investigar la situación imperante en Achocalla, en
-donde 3 mujeres habían denunciado las torturas padecidas.<o:p>
+</span>Que un grupo de bolivianos se dirigiÃ³ a la Cruz Roja Internacional
+la cual, segÃºn informes obtenidos por el reclamante, enviÃ³ una comisiÃ³n
+a Bolivia a fin de investigar la situaciÃ³n imperante en Achocalla, en
+donde 3 mujeres habÃ­an denunciado las torturas padecidas.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
@@ -308,9 +300,9 @@ donde 3 mujeres habían denunciado las torturas padecidas.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
 0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>iii)<span style="mso-tab-count:1">&nbsp;</span><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Que tan pronto se retiró la comisión investigadora las referidas
-mujeres fueron sacadas de Achocalla y no se había vuelto a saber nada de
-ellas, temiéndose que estuvieran sufriendo torturas en otro lugar o que
+</span>Que tan pronto se retirÃ³ la comisiÃ³n investigadora las referidas
+mujeres fueron sacadas de Achocalla y no se habÃ­a vuelto a saber nada de
+ellas, temiÃ©ndose que estuvieran sufriendo torturas en otro lugar o que
 hubieran sido asesinadas.<o:p>
 </o:p>
 </font></span></p>
@@ -322,47 +314,47 @@ hubieran sido asesinadas.<o:p>
 0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>iv)<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>Que
 27 personas estaban detenidas sin que se les hubiera seguido juicio. Se
-acompañó una lista de los nombres de los detenidos.&nbsp;<o:p>
+acompaÃ±Ã³ una lista de los nombres de los detenidos.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>La Comisión, en nota de 2 de enero de 1973, solicitó del Gobierno
-de Bolivia la información correspondiente, en la forma prevista en los
-Artículos 42 y 44 de su Reglamento.&nbsp;<o:p>
+</span>La ComisiÃ³n, en nota de 2 de enero de 1973, solicitÃ³ del Gobierno
+de Bolivia la informaciÃ³n correspondiente, en la forma prevista en los
+ArtÃ­culos 42 y 44 de su Reglamento.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>La Delegación de Bolivia en el Consejo Permanente, en nota de 15
-de enero de 1973, dio respuesta a la Comisión manifestando que las
-autoridades competentes de Bolivia darían la información solicitada.&nbsp;<o:p>
+</span>La DelegaciÃ³n de Bolivia en el Consejo Permanente, en nota de 15
+de enero de 1973, dio respuesta a la ComisiÃ³n manifestando que las
+autoridades competentes de Bolivia darÃ­an la informaciÃ³n solicitada.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En vista de lo anterior y de conformidad con la recomendación de
-la Subcomisión, la Comisión acordó en su trigésimo período (abril de
-1973) dirigir una nota al Gobierno de Bolivia manifestándole que esperaba
-contar con los informes ofrecidos en tiempo hábil para que pudieran ser
-considerados en el trigesimoprimer período de sesiones.&nbsp;<o:p>
+</span>En vista de lo anterior y de conformidad con la recomendaciÃ³n de
+la SubcomisiÃ³n, la ComisiÃ³n acordÃ³ en su trigÃ©simo perÃ­odo (abril de
+1973) dirigir una nota al Gobierno de Bolivia manifestÃ¡ndole que esperaba
+contar con los informes ofrecidos en tiempo hÃ¡bil para que pudieran ser
+considerados en el trigesimoprimer perÃ­odo de sesiones.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En cumplimiento de este acuerdo la Comisión se dirigió al
+</span>En cumplimiento de este acuerdo la ComisiÃ³n se dirigiÃ³ al
 Gobierno de Bolivia en nota de 15 de junio de 1973.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En su trigesimoprimer período (octubre de 1973) la Comisión
-examinó este caso con base en el hecho de que el Gobierno de Bolivia no
-había suministrado las informaciones ofrecidas y se había agotado el
-plazo del Artículo 51 del Reglamento para el envío de las mismas y
-designó como relator al Dr. Carlos A. Dunshee de Abranches, a fin de que
-preparara un proyecto de resolución, en aplicación de lo dispuesto en
-los Artículos 51 y 52 del Reglamento.&nbsp;<o:p>
+</span>En su trigesimoprimer perÃ­odo (octubre de 1973) la ComisiÃ³n
+examinÃ³ este caso con base en el hecho de que el Gobierno de Bolivia no
+habÃ­a suministrado las informaciones ofrecidas y se habÃ­a agotado el
+plazo del ArtÃ­culo 51 del Reglamento para el envÃ­o de las mismas y
+designÃ³ como relator al Dr. Carlos A. Dunshee de Abranches, a fin de que
+preparara un proyecto de resoluciÃ³n, en aplicaciÃ³n de lo dispuesto en
+los ArtÃ­culos 51 y 52 del Reglamento.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>El relator presentó un proyecto conforme al cual la Comisión
-aprobó, en dicho período, por unanimidad, la siguiente resolución (OEA/Ser.L/V/II.31,
+</span>El relator presentÃ³ un proyecto conforme al cual la ComisiÃ³n
+aprobÃ³, en dicho perÃ­odo, por unanimidad, la siguiente resoluciÃ³n (OEA/Ser.L/V/II.31,
 doc. 35 rev. 1), de 24 de octubre de 1973):<o:p>
 </o:p>
 </font></span></p>
@@ -371,7 +363,7 @@ doc. 35 rev. 1), de 24 de octubre de 1973):<o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>LA COMISIÓN INTERAMERICANA DE DERECHOS HUMANOS,<o:p>
+</span>LA COMISIÃ“N INTERAMERICANA DE DERECHOS HUMANOS,<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -390,7 +382,7 @@ doc. 35 rev. 1), de 24 de octubre de 1973):<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>1.<span style="mso-tab-count:1"> </span>Que el 18 de noviembre de
-1972 la Comisión recibió comunicación en la cual se imputa a las
+1972 la ComisiÃ³n recibiÃ³ comunicaciÃ³n en la cual se imputa a las
 autoridades bolivianas los siguientes hechos:<o:p>
 </o:p>
 </font></span></p>
@@ -400,10 +392,10 @@ autoridades bolivianas los siguientes hechos:<o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>a.<span style="mso-tab-count:1"> </span>La detención en Achocalla
+</span>a.<span style="mso-tab-count:1"> </span>La detenciÃ³n en Achocalla
 de Amalia Rada, Aida Pechazas (o Pedrazas) y Elsa Burgoa de Zapata, las
-cuales habrían denunciado a la Cruz Roja la práctica de torturas y
-desaparecidos después de que una comisión investigadora se retiró de la
+cuales habrÃ­an denunciado a la Cruz Roja la prÃ¡ctica de torturas y
+desaparecidos despuÃ©s de que una comisiÃ³n investigadora se retirÃ³ de la
 localidad;<o:p>
 </o:p>
 </font></span></p>
@@ -413,19 +405,19 @@ localidad;<o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>b.<span style="mso-tab-count:1"> </span>La detención “sin juicio
-alguno de tipo legal y democrático”, de las siguientes personas: María
+</span>b.<span style="mso-tab-count:1"> </span>La detenciÃ³n â€œsin juicio
+alguno de tipo legal y democrÃ¡ticoâ€, de las siguientes personas: MarÃ­a
 Luisa Bonadona de Quiroga al igual que su esposo e hijo: Edmy Alvarez Daza,
-dirigente de la Central Obrera Boliviana; Nelvi Navia de Chávez; Blanca
-Henrich Araoz –internada en el Hospital de Clínicas; Carmen Arratia de
-Roca y su esposo; Rosa de Egüez, Mery Fernández Negrete, Nelli Fernández
+dirigente de la Central Obrera Boliviana; Nelvi Navia de ChÃ¡vez; Blanca
+Henrich Araoz â€“internada en el Hospital de ClÃ­nicas; Carmen Arratia de
+Roca y su esposo; Rosa de EgÃ¼ez, Mery FernÃ¡ndez Negrete, Nelli FernÃ¡ndez
 Negrete, Betty Catoira Moreno, Nena Menacho, Mery Alvarado, Rina Tapia de
-Guzmán y su esposo; Dora Higueras del Barco, Sofía de Méndez Tejada,
-Nancy Olguín, Elba Figueroa, Susana Caro, Fanny Antezada, Ronnie Grebe,
-N. Bartelemi, Emma de Bacárrez –-dirigente del magisterio de La Paz--;
+GuzmÃ¡n y su esposo; Dora Higueras del Barco, SofÃ­a de MÃ©ndez Tejada,
+Nancy OlguÃ­n, Elba Figueroa, Susana Caro, Fanny Antezada, Ronnie Grebe,
+N. Bartelemi, Emma de BacÃ¡rrez â€“-dirigente del magisterio de La Paz--;
 Nadezca Bravo, Alexandra Braco, hermanas detenidas para que denuncien el
 paradero de su madre; Elsa de Bravo, representante del magisterio de La
-Paz en la Central Departamental y Agar Peñaranda.<o:p>
+Paz en la Central Departamental y Agar PeÃ±aranda.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -435,10 +427,10 @@ Paz en la Central Departamental y Agar Peñaranda.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>2.<span style="mso-tab-count:1"> </span>Dichos hechos, de ser
-verdaderos, configurarían violaciones de los Artículos I, XVIII, XXV y
-XXVI de la Declaración Americana de los Derechos y Deberes del Hombre,
-aplicándose al caso las disposiciones del Artículo 9 (bis) del Estatuto
-de la CIDH y el procedimiento regulado en los Artículos 37 a 57 del
+verdaderos, configurarÃ­an violaciones de los ArtÃ­culos I, XVIII, XXV y
+XXVI de la DeclaraciÃ³n Americana de los Derechos y Deberes del Hombre,
+aplicÃ¡ndose al caso las disposiciones del ArtÃ­culo 9 (bis) del Estatuto
+de la CIDH y el procedimiento regulado en los ArtÃ­culos 37 a 57 del
 Reglamento.<o:p>
 </o:p>
 </font></span></p>
@@ -450,19 +442,19 @@ Reglamento.<o:p>
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>3.<span style="mso-tab-count:1"> </span>El 2 de enero de 1973
 fueron solicitadas al Gobierno de Bolivia las informaciones previstas en
-los Artículos 42 y 44 de su Reglamento y en su respuesta fechada el 15
-del mismo mes, el Representante de ese país ante la OEA declaró: “En
-realidad, son las autoridades de mi país las que van a dar una respuesta
+los ArtÃ­culos 42 y 44 de su Reglamento y en su respuesta fechada el 15
+del mismo mes, el Representante de ese paÃ­s ante la OEA declarÃ³: â€œEn
+realidad, son las autoridades de mi paÃ­s las que van a dar una respuesta
 a sus requerimientos. No obstante, juzgo mi deber hacerle conocer que gran
-parte de los nombres que figuran en dicha relación nominal corresponden a
-mujeres conocidas por su labor de agitación, de franca rebelión contra
+parte de los nombres que figuran en dicha relaciÃ³n nominal corresponden a
+mujeres conocidas por su labor de agitaciÃ³n, de franca rebeliÃ³n contra
 las disposiciones legales, contra la Seguridad del Estado y contra la
-tranquilidad de la ciudadanía en general. Estoy seguro de que no escapa a
+tranquilidad de la ciudadanÃ­a en general. Estoy seguro de que no escapa a
 su elevado criterio que los extremistas, sean hombres o mujeres, cuando
-actúan para lograr sus propósitos, lo hacen al margen de la ley, es
-decir, haciendo caso omiso de ésta, pero cuando caen en poder de las
+actÃºan para lograr sus propÃ³sitos, lo hacen al margen de la ley, es
+decir, haciendo caso omiso de Ã©sta, pero cuando caen en poder de las
 autoridades, lo primero que invocan es la ley, esa ley que ellos mismos
-niegan y violan cuando secuestran, asaltan, destruyen, roban y matan”.<o:p>
+niegan y violan cuando secuestran, asaltan, destruyen, roban y matanâ€.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -471,12 +463,12 @@ niegan y violan cuando secuestran, asaltan, destruyen, roban y matan”.<o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>“Las autoridades bolivianas emplean como en cualquier país, los
+</span>â€œLas autoridades bolivianas emplean como en cualquier paÃ­s, los
 medios que la ley les autoriza para indagar los detalles que precisan y en
-base a la culpabilidad de cada uno, imponerles la sanción correspondiente
-o liberarlos. Estos procesos de indagación por ser parte de una
-investigación mayor toman tiempo, lo que o significa de ningún modo
-represión”.<o:p>
+base a la culpabilidad de cada uno, imponerles la sanciÃ³n correspondiente
+o liberarlos. Estos procesos de indagaciÃ³n por ser parte de una
+investigaciÃ³n mayor toman tiempo, lo que o significa de ningÃºn modo
+represiÃ³nâ€.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -486,9 +478,9 @@ represión”.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>4.<span style="mso-tab-count:1"> </span>El 15 de junio de 1973 la
-CIDH comunicó al Ministro de Relaciones Exteriores de Bolivia que había
-acordado posponer la consideración del caso hasta octubre siguiente,
-cuando esperaba contar con los informes ofrecidos, reiterando así la
+CIDH comunicÃ³ al Ministro de Relaciones Exteriores de Bolivia que habÃ­a
+acordado posponer la consideraciÃ³n del caso hasta octubre siguiente,
+cuando esperaba contar con los informes ofrecidos, reiterando asÃ­ la
 solicitud reglamentaria.<o:p>
 </o:p>
 </font></span></p>
@@ -499,9 +491,9 @@ solicitud reglamentaria.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>5.<span style="mso-tab-count:1"> </span>Sin embargo el Gobierno no
-suministró las informaciones ofrecidas, para los cuales el Artículo 51
-del Reglamento fija el plazo de 180 días, bajo la conminación de que a
-falta de ella se presumirán verdaderos los hechos denunciados.<o:p>
+suministrÃ³ las informaciones ofrecidas, para los cuales el ArtÃ­culo 51
+del Reglamento fija el plazo de 180 dÃ­as, bajo la conminaciÃ³n de que a
+falta de ella se presumirÃ¡n verdaderos los hechos denunciados.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -511,12 +503,12 @@ falta de ella se presumirán verdaderos los hechos denunciados.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>6.<span style="mso-tab-count:1"> </span>Transcurrido dicho plazo,
-cumple aplicar el Artículo 51 ya que de los otros elementos de convicción
-de que dispone la Comisión nada resulta contrario a la procedencia de la
+cumple aplicar el ArtÃ­culo 51 ya que de los otros elementos de convicciÃ³n
+de que dispone la ComisiÃ³n nada resulta contrario a la procedencia de la
 denuncia. Por el contrario, constan en el expediente, informaciones de que
-la Asociación de Periodistas, el Colegio de Abogados y la Comisión de
-Paz y Justicia de Bolivia confirmaron la detención de numerosas personas
-por motivos políticos entre las cuales 30 mujeres, sin que contra ellas
+la AsociaciÃ³n de Periodistas, el Colegio de Abogados y la ComisiÃ³n de
+Paz y Justicia de Bolivia confirmaron la detenciÃ³n de numerosas personas
+por motivos polÃ­ticos entre las cuales 30 mujeres, sin que contra ellas
 se iniciara juicio alguno.<o:p>
 </o:p>
 </font></span></p>
@@ -527,11 +519,11 @@ se iniciara juicio alguno.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>7.<span style="mso-tab-count:1"> </span>Finalmente el Gobierno
-boliviano, en su respuesta a la CIDH nada objetó en cuanto al requisito
-del agotamiento de los recursos de la jurisdicción interna, como sería
-normal que lo hiciera en el caso de encontrarse pendiente algún pedido de
-<u>habeas corpus</u> u otro proceso aludido en el apartado d) del Artículo
-9 (bis) del Estatuto de la Comisión.<o:p>
+boliviano, en su respuesta a la CIDH nada objetÃ³ en cuanto al requisito
+del agotamiento de los recursos de la jurisdicciÃ³n interna, como serÃ­a
+normal que lo hiciera en el caso de encontrarse pendiente algÃºn pedido de
+<u>habeas corpus</u> u otro proceso aludido en el apartado d) del ArtÃ­culo
+9 (bis) del Estatuto de la ComisiÃ³n.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -550,7 +542,7 @@ normal que lo hiciera en el caso de encontrarse pendiente algún pedido de
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>1.<span style="mso-tab-count:1"> </span>Presumir verdaderos los
-hechos denunciados, en aplicación del Artículo 51 del Reglamento.<o:p>
+hechos denunciados, en aplicaciÃ³n del ArtÃ­culo 51 del Reglamento.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -561,9 +553,9 @@ hechos denunciados, en aplicación del Artículo 51 del Reglamento.<o:p>
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>2.<span style="mso-tab-count:1"> </span>Recomendar al ilustrado
 Gobierno de Bolivia que: a) adopte las medidas necesarias para que cesen
-inmediatamente las violaciones del derecho de protección contra la
-detención arbitraria y del derecho a proceso regular en relación a las
-personas cuyos nombres figuran arriba; b) ordene una investigación por
+inmediatamente las violaciones del derecho de protecciÃ³n contra la
+detenciÃ³n arbitraria y del derecho a proceso regular en relaciÃ³n a las
+personas cuyos nombres figuran arriba; b) ordene una investigaciÃ³n por
 parte de las autoridades competentes para determinar el destino de Amalia
 Rada, Aida Pechazas y Elsa Burgoa de Zapata, que se encontraban detenidas
 en Achocalla en noviembre de 1972, en caso de que ellas no hayan sido
@@ -577,8 +569,8 @@ liberadas.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>3.<span style="mso-tab-count:1"> </span>Solicitar al mismo Gobierno
-que informe a la Comisión en el plazo de 30 días sobre la ejecución de
-las medidas indicadas en el Nº 2 <u>supra</u>.<o:p>
+que informe a la ComisiÃ³n en el plazo de 30 dÃ­as sobre la ejecuciÃ³n de
+las medidas indicadas en el NÂº 2 <u>supra</u>.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -588,37 +580,37 @@ las medidas indicadas en el Nº 2 <u>supra</u>.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>4.<span style="mso-tab-count:1"> </span>Si no se suministran las
-informaciones indicadas en el Nº 3, el caso sea incluido en el informe
-anual a la Asamblea General, de conformidad con el Artículo 57 del
+informaciones indicadas en el NÂº 3, el caso sea incluido en el informe
+anual a la Asamblea General, de conformidad con el ArtÃ­culo 57 del
 Reglamento.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Esta resolución fue comunicada al Gobierno de Bolivia con nota de
-19 de diciembre de 1973. Copia de dicha nota y de la resolución fue
-transmitida a la Delegación de Bolivia en el Consejo Permanente de la
-Organización el 20 del propio mes y año.&nbsp;<o:p>
+</span>Esta resoluciÃ³n fue comunicada al Gobierno de Bolivia con nota de
+19 de diciembre de 1973. Copia de dicha nota y de la resoluciÃ³n fue
+transmitida a la DelegaciÃ³n de Bolivia en el Consejo Permanente de la
+OrganizaciÃ³n el 20 del propio mes y aÃ±o.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En el trigesimosegundo período (abril de 1974) la Comisión
-prosiguió el examen de este caso observando que el Gobierno de Bolivia no
-había suministrado informes sobre la ejecución de las medidas
-recomendadas en la resolución de 24 de octubre. En consecuencia, al tenor
-de lo previsto en la propia resolución, acordó incluir este caso –-con
+</span>En el trigesimosegundo perÃ­odo (abril de 1974) la ComisiÃ³n
+prosiguiÃ³ el examen de este caso observando que el Gobierno de Bolivia no
+habÃ­a suministrado informes sobre la ejecuciÃ³n de las medidas
+recomendadas en la resoluciÃ³n de 24 de octubre. En consecuencia, al tenor
+de lo previsto en la propia resoluciÃ³n, acordÃ³ incluir este caso â€“-con
 las observaciones apropiadas-- en el informe anual a la Asamblea General
-de la Organización.&nbsp;<o:p>
+de la OrganizaciÃ³n.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>En cumplimiento de ese acuerdo la Comisión aprobó en dicho período,
-por unanimidad, la siguiente resolución (OEA/Ser.L/V/II.32, doc. 34, de
+</span>En cumplimiento de ese acuerdo la ComisiÃ³n aprobÃ³ en dicho perÃ­odo,
+por unanimidad, la siguiente resoluciÃ³n (OEA/Ser.L/V/II.32, doc. 34, de
 10 de abril de 1974):&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>LA COMISIÓN INTERAMERICANA DE DERECHOS HUMANOS,<o:p>
+</span>LA COMISIÃ“N INTERAMERICANA DE DERECHOS HUMANOS,<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -627,8 +619,8 @@ por unanimidad, la siguiente resolución (OEA/Ser.L/V/II.32, doc. 34, de
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>VISTA la resolución sobre el caso 1757 (doc. 35-31), aprobada en
-su trigesimoprimer período de sesiones, en la cual se resolvió:<o:p>
+</span>VISTA la resoluciÃ³n sobre el caso 1757 (doc. 35-31), aprobada en
+su trigesimoprimer perÃ­odo de sesiones, en la cual se resolviÃ³:<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -638,7 +630,7 @@ su trigesimoprimer período de sesiones, en la cual se resolvió:<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>1.<span style="mso-tab-count:1"> </span>Presumir verdaderos los
-hechos denunciados, en aplicación del Artículo 51 del Reglamento.<o:p>
+hechos denunciados, en aplicaciÃ³n del ArtÃ­culo 51 del Reglamento.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -649,9 +641,9 @@ hechos denunciados, en aplicación del Artículo 51 del Reglamento.<o:p>
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>2.<span style="mso-tab-count:1"> </span>Recomendar al ilustrado
 Gobierno de Bolivia que: a) adopte las medidas necesarias para que cesen
-inmediatamente las violaciones del derecho de protección contra la
-detención arbitraria y del derecho a proceso regular en relación a las
-personas cuyos nombres figuren arriba; b) ordene una investigación por
+inmediatamente las violaciones del derecho de protecciÃ³n contra la
+detenciÃ³n arbitraria y del derecho a proceso regular en relaciÃ³n a las
+personas cuyos nombres figuren arriba; b) ordene una investigaciÃ³n por
 parte de las autoridades competentes para determinar el destino de Amalia
 Rada, Aida Pechazas y Elsa Burgoa de Zapata, que se encontraban detenidas
 en Achocalla en noviembre de 1972, en caso de que ellas no hayan sido
@@ -665,8 +657,8 @@ liberadas.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>3.<span style="mso-tab-count:1"> </span>Solicitar la mismo Gobierno
-que informe a la Comisión en el plazo de 30 días sobre la ejecución de
-las medidas indicadas en el Nº 2 <u>supra</u>.<o:p>
+que informe a la ComisiÃ³n en el plazo de 30 dÃ­as sobre la ejecuciÃ³n de
+las medidas indicadas en el NÂº 2 <u>supra</u>.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -676,8 +668,8 @@ las medidas indicadas en el Nº 2 <u>supra</u>.<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>4.<span style="mso-tab-count:1"> </span>Si no se suministran las
-informaciones indicadas en el Nº 3, el caso sea incluido en el informe
-anual a la Asamblea General, de conformidad con el Artículo 57 del
+informaciones indicadas en el NÂº 3, el caso sea incluido en el informe
+anual a la Asamblea General, de conformidad con el ArtÃ­culo 57 del
 Reglamento, y<o:p>
 </o:p>
 </font></span></p>
@@ -697,7 +689,7 @@ Reglamento, y<o:p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Que el Gobierno de Bolivia no ha suministrado las informaciones
-indicadas en dicha resolución.<o:p>
+indicadas en dicha resoluciÃ³n.<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
@@ -717,9 +709,9 @@ indicadas en dicha resolución.<o:p>
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>1.<span style="mso-tab-count:1"> </span>Observar al Gobierno de
 Bolivia que tales hechos configuran graves violaciones al derecho a la
-vida, a la libertad; al derecho de justicia; al derecho de protección
-contra la detención arbitraria y al derecho a proceso regular,
-establecidos en los Artículos I, XVIII, XXV y XXVI de la Declaración
+vida, a la libertad; al derecho de justicia; al derecho de protecciÃ³n
+contra la detenciÃ³n arbitraria y al derecho a proceso regular,
+establecidos en los ArtÃ­culos I, XVIII, XXV y XXVI de la DeclaraciÃ³n
 Americana de los Derechos y Deberes del Hombre.<o:p>
 </o:p>
 </font></span></p>
@@ -729,21 +721,22 @@ Americana de los Derechos y Deberes del Hombre.<o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-top:0in;margin-right:.5in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.5in;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>2.<span style="mso-tab-count:1"> </span>Incluir esta resolución en
-su informe anual a la Asamblea General de la Organización, de conformidad
-con el Artículo 9 (bis), inc. c, iii del Estatuto y el Artículo 57 del
+</span>2.<span style="mso-tab-count:1"> </span>Incluir esta resoluciÃ³n en
+su informe anual a la Asamblea General de la OrganizaciÃ³n, de conformidad
+con el ArtÃ­culo 9 (bis), inc. c, iii del Estatuto y el ArtÃ­culo 57 del
 Reglamento.&nbsp;<o:p>
 </o:p>
 </font></span></p>
 <p class="MsoBodyText" style="margin-right:4.5pt;tab-stops:.5in 1.0in 99.0pt" align="justify"><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Este acuerdo fue hecho del conocimiento del Gobierno de Bolivia en
-nota de 3 de junio de 1974.</font></span></o:p><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">
+nota de 3 de junio de 1974.</font></span><span lang="ES-AR" style="mso-ansi-language:ES-AR"><font size="2" face="Verdana">
 </font></span></p>
-<p align="center"><b><font face="Verdana" size="2">[ <a href="indice.htm"> Índice</a>
-| <a href="sec.2.htm"> Anterior</a> | <a href="sec.3.htm"> Próximo</a> ]</font>
+<p align="center"><b><font face="Verdana" size="2">[ <a href="indice.htm"> Ãndice</a>
+| <a href="sec.2.htm"> Anterior</a> | <a href="sec.3.htm"> PrÃ³ximo</a> ]</font>
 </b>
-</td>
+</p></o:p></td>
 </tr>
-</table>
-</div>
-&nbsp;</body></html>
+</tbody></table>
+</center></div>
+&nbsp;<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8b9fd870d8e992fb&quot;,&quot;version&quot;:&quot;2024.8.0&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfL4&quot;:true}},&quot;token&quot;:&quot;0e4ec23c5a5d428f9a8c9eda5bb767cc&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
+</body></html>

@@ -28,25 +28,52 @@ function getFileNameFromURL(url) {
 
 /**
  * Downloads a file from a given URL and saves it to a specified path.
+ * If the file is an HTML file, it will be processed with Puppeteer to get the compiled HTML.
  * @param {string} fileURL - The URL of the file to download.
  * @param {string} outputPath - The path where the file will be saved.
  * @returns {Promise<void>} A promise that resolves when the download is complete.
  */
 function downloadFile(fileURL, outputPath) {
-  return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(outputPath);
-    const protocol = fileURL.startsWith("https") ? https : http;
-    protocol
-      .get(fileURL, (response) => {
-        response.pipe(file);
-        file.on("finish", () => {
-          file.close(resolve);
+  return new Promise(async (resolve, reject) => {
+    // Check if the URL contains 'htm' to determine if it's an HTML file
+    if (fileURL.includes("htm")) {
+      try {
+        // Launch Puppeteer and load the page
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(fileURL, { waitUntil: "networkidle0" });
+
+        // Get the compiled HTML
+        const compiledHTML = await page.content();
+
+        // Save the compiled HTML to the output path with UTF-8 encoding
+        fs.writeFileSync(outputPath, compiledHTML, { encoding: "utf8" });
+        console.log(`Compiled HTML saved to ${outputPath} with UTF-8 encoding`);
+
+        // Close Puppeteer
+        await browser.close();
+
+        resolve(); // Resolve the promise after saving the file
+      } catch (error) {
+        console.error(`Failed to process HTML file: ${error.message}`);
+        reject(error); // Reject the promise if an error occurs
+      }
+    } else {
+      // If not an HTML file, proceed with the normal download
+      const file = fs.createWriteStream(outputPath);
+      const protocol = fileURL.startsWith("https") ? https : http;
+      protocol
+        .get(fileURL, (response) => {
+          response.pipe(file);
+          file.on("finish", () => {
+            file.close(resolve); // Resolve the promise after the file is downloaded
+          });
+        })
+        .on("error", (error) => {
+          fs.unlink(outputPath); // Delete the file asynchronously on error
+          reject(error); // Reject the promise if an error occurs
         });
-      })
-      .on("error", (error) => {
-        fs.unlink(outputPath); // Delete the file asynchronously on error
-        reject(error);
-      });
+    }
   });
 }
 
@@ -80,7 +107,7 @@ async function processAndDownloadFile(result, outputDir) {
     if (!fileLink) {
       console.log("No file link found, skipping...");
 
-      caseMapping["ERROR_" + caseName] = "ERROR_" + caseName;
+      caseMapping["_ERROR_ " + caseName] = caseName;
 
       return;
     }
@@ -152,5 +179,6 @@ async function scrapeWebsite(url, baseDir) {
       JSON.stringify(caseMapping, null, 2),
       "utf-8"
     );
+    caseMapping = {};
   }
 })();
