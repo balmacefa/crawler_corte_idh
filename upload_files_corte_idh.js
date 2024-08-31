@@ -1,19 +1,15 @@
-// http://localhost:3000/api/archivo_documentos/66cf963461a35117362ab8da?depth=1&draft=false&locale=undefined
-
-// -
-const axios = require("axios");
 const FormData = require("form-data");
 const fs = require("fs");
+const path = require("path");
 
 // Ruta al archivo que quieres subir
 const filePath =
   "D:\\iiresodh\\crawler_corte_idh\\data\\casos_sentencias\\converted docxs\\seriec_01_esp.docx";
-
-// Todo: loop the converted docxs folder and send the file, use filename as the tile, empty th othr filds
+const fileName = path.basename(filePath, ".docx");
 
 // Datos para la colección B (ArchivoDocumento)
 const archivoDocumentoData = {
-  title: "seriec_01_esp",
+  title: fileName,
   source_org: "Corte IDH",
   document_type: "html_docx", // Puede ser 'pdf', 'html_text', o 'html_docx'
 };
@@ -27,27 +23,30 @@ for (const key in archivoDocumentoData) {
 }
 
 // Agrega el archivo al formulario, relacionándolo con el campo `media_file`
-form.append("media_file[file]", fs.createReadStream(filePath));
+form.append("media_file", fs.createReadStream(filePath));
 
-// Envía la solicitud HTTP
-console.log("sending form native API :)");
+const options = {
+  method: "POST",
+  body: form,
+  // If you add this, upload won't work
+  headers: {
+    "Content-Type": "multipart/form-data",
+  },
+};
 
-try {
-  fetch("http://localhost:3000/api/archivo_documentos", {
-    method: "POST",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(archivoDocumentoData),
+// delete options.headers["Content-Type"];
+
+// Envía la solicitud HTTP usando fetch
+fetch("http://localhost:3000/api/archivo_documentos", options)
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`Error en la solicitud: ${response.statusText}`);
   })
-    .then((response) => console.log(response))
-    .catch((error) => {
-      console.error(
-        "Error:",
-        error.response ? error.response.data : error.message
-      );
-    });
-} catch (err) {
-  console.log(err);
-}
+  .then((data) => {
+    console.log("Respuesta del servidor:", data);
+  })
+  .catch((error) => {
+    console.error("Error:", error.message);
+  });
