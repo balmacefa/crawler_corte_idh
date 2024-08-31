@@ -7,9 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch main",
+      "name": "Launch crawler_corte_idh",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\index.js"
+      "program": "${workspaceFolder}\\crawler_corte_idh.js"
     },
     {
       "type": "node",
