@@ -28,14 +28,14 @@ function getFileNameFromURL(url) {
 
 /**
  * Downloads a file from a given URL and saves it to a specified path.
- * If the file is an HTML file, it will be processed with Puppeteer to get the compiled HTML.
+ * If the file is an HTML file, it will be processed with Puppeteer to get the compiled HTML
+ * and save it as a PDF.
  * @param {string} fileURL - The URL of the file to download.
  * @param {string} outputPath - The path where the file will be saved.
  * @returns {Promise<void>} A promise that resolves when the download is complete.
  */
 function downloadFile(fileURL, outputPath) {
   return new Promise(async (resolve, reject) => {
-    // Check if the URL contains 'htm' to determine if it's an HTML file
     if (fileURL.includes("htm")) {
       try {
         // Launch Puppeteer and load the page
@@ -43,20 +43,30 @@ function downloadFile(fileURL, outputPath) {
         const page = await browser.newPage();
         await page.goto(fileURL, { waitUntil: "networkidle0" });
 
-        // Get the compiled HTML
-        const compiledHTML = await page.content();
+        // Modify output path to save as PDF
+        const pdfOutputPath = outputPath + ".pdf";
 
-        // Save the compiled HTML to the output path with UTF-8 encoding
-        fs.writeFileSync(outputPath, compiledHTML, { encoding: "utf8" });
-        console.log(`Compiled HTML saved to ${outputPath} with UTF-8 encoding`);
+        // Save the page as PDF with margins
+        await page.pdf({
+          path: pdfOutputPath,
+          format: "A4",
+          margin: {
+            top: "20mm",
+            right: "20mm",
+            bottom: "20mm",
+            left: "20mm",
+          },
+          printBackground: true, // Ensure backgrounds are printed
+        });
+        console.log(`HTML page saved as PDF with margins to ${pdfOutputPath}`);
 
         // Close Puppeteer
         await browser.close();
 
-        resolve(); // Resolve the promise after saving the file
+        resolve();
       } catch (error) {
         console.error(`Failed to process HTML file: ${error.message}`);
-        reject(error); // Reject the promise if an error occurs
+        reject(error);
       }
     } else {
       // If not an HTML file, proceed with the normal download
@@ -66,12 +76,12 @@ function downloadFile(fileURL, outputPath) {
         .get(fileURL, (response) => {
           response.pipe(file);
           file.on("finish", () => {
-            file.close(resolve); // Resolve the promise after the file is downloaded
+            file.close(resolve);
           });
         })
         .on("error", (error) => {
           fs.unlink(outputPath); // Delete the file asynchronously on error
-          reject(error); // Reject the promise if an error occurs
+          reject(error);
         });
     }
   });
