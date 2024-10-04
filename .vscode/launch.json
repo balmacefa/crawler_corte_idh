@@ -31,6 +31,13 @@
       "name": "Launch crawler_University_of_Minnesota_Human_Rights_Library",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\crawler_University_of_Minnesota_Human_Rights_Library.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch crawler_Revista_Latinoamericana_de_Psicología",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\crawler_Revista_Latinoamericana_de_Psicología.js"
     }
   ]
 }
