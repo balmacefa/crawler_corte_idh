@@ -74,6 +74,39 @@ function fileExists(filePath) {
   return fs.existsSync(filePath);
 }
 
+/**
+ * Carga un archivo JSON si existe.
+ * @param {string} filePath - Ruta del archivo JSON.
+ * @returns {object} El contenido del archivo JSON o un objeto vacío.
+ */
+function loadJSON(filePath) {
+  if (fs.existsSync(filePath)) {
+    try {
+      const data = fs.readFileSync(filePath, "utf-8");
+      return JSON.parse(data);
+    } catch (error) {
+      console.error(`Error al cargar ${filePath}:`, error);
+      return {};
+    }
+  } else {
+    return {};
+  }
+}
+
+/**
+ * Guarda un objeto como archivo JSON.
+ * @param {string} filePath - Ruta donde se guardará el archivo JSON.
+ * @param {object} data - Objeto a guardar.
+ */
+function saveJSON(filePath, data) {
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
+    console.log(`Datos guardados en ${filePath}`);
+  } catch (error) {
+    console.error(`Error al guardar ${filePath}:`, error);
+  }
+}
+
 let caseMapping = {};
 let failedCaseMapping = {};
 
@@ -114,18 +147,18 @@ async function generatePDF(browser, pageURL, outputPath) {
  * @param {object} articleElement - Elemento del artículo.
  * @param {string} outputDir - Directorio donde se descargará el archivo.
  * @param {string} category - Categoría o año del documento.
+ * @param {string} mappingOutputPath - Ruta del archivo de mapeo exitoso.
+ * @param {string} failedMappingOutputPath - Ruta del archivo de mapeo fallido.
  */
 async function processAndDownloadArticle(
   browser,
   articleElement,
   outputDir,
-  category
+  category,
+  mappingOutputPath,
+  failedMappingOutputPath
 ) {
   try {
-    // Implementar un retraso aleatorio entre 5 y 10 segundos antes de procesar cada artículo
-    const delay = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000;
-    await sleep(delay);
-
     // Obtener el título del artículo
     const titleElement = await articleElement.$("p.titulo > span.titulo > a");
     const title = await (
@@ -154,15 +187,33 @@ async function processAndDownloadArticle(
     const fileName = getFileNameFromURL(textoCompletoLink);
     const outputPath = path.join(outputDir, fileName + ".pdf");
 
-    // Guardar el mapeo
-    caseMapping[fileName + ".pdf"] = {
-      url: textoCompletoLink,
-      title: title,
-      category: category,
-    };
+    // Verificar si el archivo ya fue procesado (existe en el mapeo)
+    if (
+      caseMapping.hasOwnProperty(fileName + ".pdf") ||
+      failedCaseMapping.hasOwnProperty(fileName)
+    ) {
+      console.log(`El artículo ya fue procesado, se omite: ${title}`);
+      return;
+    }
 
     // Verificar si el archivo existe
     if (!fileExists(outputPath)) {
+      // Implementar un retraso aleatorio entre 30 y 60 segundos antes de procesar cada artículo
+      const delay = Math.floor(Math.random() * (60000 - 30000 + 1)) + 30000;
+      console.log(
+        `Esperando ${
+          delay / 1000
+        } segundos antes de procesar el artículo: ${title}`
+      );
+      await sleep(delay);
+
+      // Guardar el mapeo
+      caseMapping[fileName + ".pdf"] = {
+        url: textoCompletoLink,
+        title: title,
+        category: category,
+      };
+
       console.log(`Procesando: ${title}`);
 
       if (textoCompletoLink.endsWith(".pdf")) {
@@ -175,6 +226,9 @@ async function processAndDownloadArticle(
         console.log(`Generando PDF desde página web: ${textoCompletoLink}`);
         await generatePDF(browser, textoCompletoLink, outputPath);
       }
+
+      // Guardar los mapeos exitosos en un archivo JSON después de procesar cada artículo
+      saveJSON(mappingOutputPath, caseMapping);
     } else {
       console.log(`El archivo ya existe, se omite la descarga: ${outputPath}`);
     }
@@ -189,6 +243,9 @@ async function processAndDownloadArticle(
       category: error.category || "unknown",
       error: error.message,
     };
+
+    // Guardar los mapeos fallidos en un archivo JSON después de cada fallo
+    saveJSON(failedMappingOutputPath, failedCaseMapping);
   }
 }
 
@@ -198,8 +255,17 @@ async function processAndDownloadArticle(
  * @param {string} year - Año a procesar.
  * @param {string} yearUrl - URL de la página del año.
  * @param {string} baseDir - Directorio base para guardar los archivos.
+ * @param {string} mappingOutputPath - Ruta del archivo de mapeo exitoso.
+ * @param {string} failedMappingOutputPath - Ruta del archivo de mapeo fallido.
  */
-async function scrapeYearPage(browser, year, yearUrl, baseDir) {
+async function scrapeYearPage(
+  browser,
+  year,
+  yearUrl,
+  baseDir,
+  mappingOutputPath,
+  failedMappingOutputPath
+) {
   const page = await browser.newPage();
   console.log(`Navegando a la página del año: ${yearUrl}`);
   await page.goto(yearUrl, { waitUntil: "networkidle2" });
@@ -221,10 +287,27 @@ async function scrapeYearPage(browser, year, yearUrl, baseDir) {
   shuffle(articleElements);
 
   for (const articleElement of articleElements) {
-    await processAndDownloadArticle(browser, articleElement, yearDir, year);
+    await processAndDownloadArticle(
+      browser,
+      articleElement,
+      yearDir,
+      year,
+      mappingOutputPath,
+      failedMappingOutputPath
+    );
   }
 
   await page.close();
+
+  // Implementar un retraso entre la navegación de años (60 a 120 segundos)
+  const delayBetweenYears =
+    Math.floor(Math.random() * (120000 - 60000 + 1)) + 60000;
+  console.log(
+    `Esperando ${
+      delayBetweenYears / 1000
+    } segundos antes de procesar el siguiente año...`
+  );
+  await sleep(delayBetweenYears);
 }
 
 /**
@@ -258,26 +341,29 @@ async function scrapeMainPage(url, baseDir) {
 
   console.log(`Encontrados ${yearLinks.length} años. Procesando...`);
 
-  // Limitar el número de años a procesar por sesión para reducir la carga
-  const maxYearsToProcess = 2; // Por ejemplo, procesar solo 2 años por ejecución
+  const yearsToProcess = yearLinks;
 
-  // Mezclar los años en orden aleatorio
-  shuffle(yearLinks);
-  const yearsToProcess = yearLinks.slice(0, maxYearsToProcess);
+  // Definir las rutas de los archivos de mapeo
+  const mappingOutputPath = path.join(baseDir, "case_mapping_success.json");
+  const failedMappingOutputPath = path.join(
+    baseDir,
+    "case_mapping_failed.json"
+  );
+
+  // Cargar los mapeos existentes si existen
+  caseMapping = loadJSON(mappingOutputPath);
+  failedCaseMapping = loadJSON(failedMappingOutputPath);
 
   for (const { year, url: yearUrl } of yearsToProcess) {
     console.log(`Procesando año: ${year} en ${yearUrl}`);
-    await scrapeYearPage(browser, year, yearUrl, baseDir);
-
-    // Implementar un retraso entre la navegación de años (10 a 20 segundos)
-    const delayBetweenYears =
-      Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
-    console.log(
-      `Esperando ${
-        delayBetweenYears / 1000
-      } segundos antes de procesar el siguiente año...`
+    await scrapeYearPage(
+      browser,
+      year,
+      yearUrl,
+      baseDir,
+      mappingOutputPath,
+      failedMappingOutputPath
     );
-    await sleep(delayBetweenYears);
   }
 
   console.log("Cerrando navegador...");
@@ -297,28 +383,4 @@ async function scrapeMainPage(url, baseDir) {
   } catch (error) {
     console.error("Error durante el scraping:", error);
   }
-
-  // Guardar los mapeos exitosos en un archivo JSON después de procesar todos los casos
-  const mappingOutputPath = path.join(outputDir, "case_mapping_success.json");
-  fs.writeFileSync(
-    mappingOutputPath,
-    JSON.stringify(caseMapping, null, 2),
-    "utf-8"
-  );
-  console.log(`Mapeo de casos guardado en ${mappingOutputPath}`);
-
-  // Guardar los mapeos fallidos en un archivo JSON separado
-  const failedMappingOutputPath = path.join(
-    outputDir,
-    "case_mapping_failed.json"
-  );
-  fs.writeFileSync(
-    failedMappingOutputPath,
-    JSON.stringify(failedCaseMapping, null, 2),
-    "utf-8"
-  );
-  console.log(`Mapeo de casos fallidos guardado en ${failedMappingOutputPath}`);
-
-  caseMapping = {};
-  failedCaseMapping = {};
 })();
