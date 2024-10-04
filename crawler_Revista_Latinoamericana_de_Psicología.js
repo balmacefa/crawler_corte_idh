@@ -1,4 +1,4 @@
-// Web crawler modificado con reducción de carga para -> Revista Latinoamericana de Psicología
+// Web crawler modificado con eliminación de tiempos de espera y manejo de rate limit
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
@@ -50,6 +50,36 @@ function downloadFile(fileURL, outputPath) {
       const protocol = fileURL.startsWith("https") ? https : http;
       protocol
         .get(fileURL, (response) => {
+          // Verificar el código de estado HTTP
+          if (response.statusCode !== 200) {
+            response.resume();
+            reject(
+              new Error(
+                `Failed to download file: ${response.statusCode} ${response.statusMessage}`
+              )
+            );
+            return;
+          }
+
+          // Verificar el tipo de contenido
+          const contentType = response.headers["content-type"];
+          if (!contentType || !contentType.includes("application/pdf")) {
+            let data = "";
+            response.on("data", (chunk) => {
+              data += chunk;
+            });
+            response.on("end", () => {
+              if (data.includes("Ha sobrepasado los límites de acceso")) {
+                reject(new RateLimitError("Rate limit exceeded"));
+              } else {
+                reject(
+                  new Error(`Expected application/pdf but got ${contentType}`)
+                );
+              }
+            });
+            return;
+          }
+
           response.pipe(file);
           file.on("finish", () => {
             file.close(resolve);
@@ -111,19 +141,6 @@ let caseMapping = {};
 let failedCaseMapping = {};
 
 /**
- * Función para mezclar un array (Fisher-Yates Shuffle).
- * @param {Array} array - El array a mezclar.
- * @returns {Array} El array mezclado.
- */
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-/**
  * Genera un PDF a partir de una página web utilizando Puppeteer.
  * @param {object} browser - Instancia del navegador Puppeteer.
  * @param {string} pageURL - URL de la página a convertir en PDF.
@@ -133,11 +150,29 @@ async function generatePDF(browser, pageURL, outputPath) {
   try {
     const page = await browser.newPage();
     await page.goto(pageURL, { waitUntil: "networkidle2" });
+
+    // Verificar si la página contiene el mensaje de límite de tasa
+    const pageContent = await page.content();
+    if (pageContent.includes("Ha sobrepasado los límites de acceso")) {
+      await page.close();
+      throw new RateLimitError("Rate limit exceeded");
+    }
+
     await page.pdf({ path: outputPath, format: "A4" });
     await page.close();
     console.log(`PDF generado y guardado en: ${outputPath}`);
   } catch (error) {
-    throw new Error(`Error al generar PDF desde ${pageURL}: ${error.message}`);
+    throw error;
+  }
+}
+
+/**
+ * Clase de error personalizada para manejar el límite de tasa.
+ */
+class RateLimitError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "RateLimitError";
   }
 }
 
@@ -198,15 +233,6 @@ async function processAndDownloadArticle(
 
     // Verificar si el archivo existe
     if (!fileExists(outputPath)) {
-      // Implementar un retraso aleatorio entre 30 y 60 segundos antes de procesar cada artículo
-      const delay = Math.floor(Math.random() * (60000 - 30000 + 1)) + 30000;
-      console.log(
-        `Esperando ${
-          delay / 1000
-        } segundos antes de procesar el artículo: ${title}`
-      );
-      await sleep(delay);
-
       // Guardar el mapeo
       caseMapping[fileName + ".pdf"] = {
         url: textoCompletoLink,
@@ -235,6 +261,10 @@ async function processAndDownloadArticle(
   } catch (error) {
     console.error("Error al procesar el artículo:", error);
 
+    if (error instanceof RateLimitError) {
+      throw error; // Re-lanzar el error para manejarlo en niveles superiores
+    }
+
     // Guardar el mapeo de fallos
     const fileName = getFileNameFromURL(error.textoCompletoLink || "unknown");
     failedCaseMapping[fileName] = {
@@ -247,6 +277,33 @@ async function processAndDownloadArticle(
     // Guardar los mapeos fallidos en un archivo JSON después de cada fallo
     saveJSON(failedMappingOutputPath, failedCaseMapping);
   }
+}
+
+/**
+ * Función para reintentar una operación con retraso en caso de error de rate limit.
+ * @param {Function} fn - La función a ejecutar.
+ * @param {number} delay - El tiempo en milisegundos a esperar antes de reintentar.
+ * @param {number} retries - Número de reintentos.
+ * @param  {...any} args - Argumentos para la función fn.
+ */
+async function retryWithDelay(fn, delay, retries, ...args) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn(...args);
+    } catch (error) {
+      if (error instanceof RateLimitError) {
+        console.log(
+          `Rate limit excedido. Esperando ${
+            delay / 60000
+          } minutos antes de reintentar...`
+        );
+        await sleep(delay);
+      } else {
+        throw error;
+      }
+    }
+  }
+  throw new Error(`Falló después de ${retries} reintentos`);
 }
 
 /**
@@ -266,7 +323,7 @@ async function scrapeYearPage(
   mappingOutputPath,
   failedMappingOutputPath
 ) {
-  const page = await browser.newPage();
+  let page = await browser.newPage();
   console.log(`Navegando a la página del año: ${yearUrl}`);
   await page.goto(yearUrl, { waitUntil: "networkidle2" });
   console.log("Esperando a que el contenido cargue...");
@@ -277,37 +334,36 @@ async function scrapeYearPage(
   createDirectory(yearDir);
 
   // Obtener todos los artículos
-  const articleElements = await page.$$("#listadoDeArticulos li.articulo");
+  let articleElements = await page.$$("#listadoDeArticulos li.articulo");
 
   console.log(
     `Encontrados ${articleElements.length} artículos para el año ${year}`
   );
 
   // Mezclar los artículos en orden aleatorio
-  shuffle(articleElements);
+  // shuffle(articleElements);
 
   for (const articleElement of articleElements) {
-    await processAndDownloadArticle(
-      browser,
-      articleElement,
-      yearDir,
-      year,
-      mappingOutputPath,
-      failedMappingOutputPath
-    );
+    try {
+      await retryWithDelay(
+        processAndDownloadArticle,
+        15 * 60 * 1000, // 15 minutos
+        3, // número de reintentos
+        browser,
+        articleElement,
+        yearDir,
+        year,
+        mappingOutputPath,
+        failedMappingOutputPath
+      );
+    } catch (error) {
+      console.error(
+        `Falló al procesar el artículo después de reintentos: ${error}`
+      );
+    }
   }
 
   await page.close();
-
-  // Implementar un retraso entre la navegación de años (60 a 120 segundos)
-  const delayBetweenYears =
-    Math.floor(Math.random() * (120000 - 60000 + 1)) + 60000;
-  console.log(
-    `Esperando ${
-      delayBetweenYears / 1000
-    } segundos antes de procesar el siguiente año...`
-  );
-  await sleep(delayBetweenYears);
 }
 
 /**
@@ -356,14 +412,26 @@ async function scrapeMainPage(url, baseDir) {
 
   for (const { year, url: yearUrl } of yearsToProcess) {
     console.log(`Procesando año: ${year} en ${yearUrl}`);
-    await scrapeYearPage(
-      browser,
-      year,
-      yearUrl,
-      baseDir,
-      mappingOutputPath,
-      failedMappingOutputPath
-    );
+    try {
+      await scrapeYearPage(
+        browser,
+        year,
+        yearUrl,
+        baseDir,
+        mappingOutputPath,
+        failedMappingOutputPath
+      );
+    } catch (error) {
+      console.error(`Error al procesar el año ${year}:`, error);
+      if (error instanceof RateLimitError) {
+        console.log(
+          "Rate limit excedido en nivel principal, esperando 15 minutos..."
+        );
+        await sleep(15 * 60 * 1000); // Esperar 15 minutos
+        // Reintentar el año actual
+        continue;
+      }
+    }
   }
 
   console.log("Cerrando navegador...");
