@@ -1,10 +1,19 @@
-// Web crawler modificado para -> Revista Latinoamericana de Psicología
+// Web crawler modificado con reducción de carga para -> Revista Latinoamericana de Psicología
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
 const https = require("https");
 const crypto = require("crypto");
+
+/**
+ * Función para pausar la ejecución durante un tiempo determinado.
+ * @param {number} ms - Milisegundos a esperar.
+ * @returns {Promise<void>}
+ */
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 /**
  * Crea un directorio si no existe.
@@ -30,47 +39,13 @@ function getFileNameFromURL(url) {
 
 /**
  * Descarga un archivo desde una URL y lo guarda en una ruta especificada.
- * Si el archivo es HTML, se procesa con Puppeteer para obtener el HTML compilado y guardarlo como PDF.
  * @param {string} fileURL - URL del archivo a descargar.
  * @param {string} outputPath - Ruta donde se guardará el archivo.
  * @returns {Promise<void>} Promesa que se resuelve cuando la descarga se completa.
  */
 function downloadFile(fileURL, outputPath) {
   return new Promise(async (resolve, reject) => {
-    if (fileURL.includes("htm")) {
-      try {
-        const browser = await puppeteer.launch({
-          headless: true,
-        });
-
-        const page = await browser.newPage();
-        await page.goto(fileURL, { waitUntil: "networkidle0" });
-
-        const pdfOutputPath = outputPath + ".pdf";
-
-        await page.pdf({
-          path: pdfOutputPath,
-          format: "A4",
-          margin: {
-            top: "20mm",
-            right: "20mm",
-            bottom: "20mm",
-            left: "20mm",
-          },
-          printBackground: true,
-        });
-        console.log(
-          `Página HTML guardada como PDF con márgenes en ${pdfOutputPath}`
-        );
-
-        await browser.close();
-
-        resolve();
-      } catch (error) {
-        console.error(`Error al procesar el archivo HTML: ${error.message}`);
-        reject(error);
-      }
-    } else {
+    try {
       const file = fs.createWriteStream(outputPath);
       const protocol = fileURL.startsWith("https") ? https : http;
       protocol
@@ -84,6 +59,8 @@ function downloadFile(fileURL, outputPath) {
           fs.unlink(outputPath, () => {});
           reject(error);
         });
+    } catch (error) {
+      reject(error);
     }
   });
 }
@@ -101,13 +78,54 @@ let caseMapping = {};
 let failedCaseMapping = {};
 
 /**
+ * Función para mezclar un array (Fisher-Yates Shuffle).
+ * @param {Array} array - El array a mezclar.
+ * @returns {Array} El array mezclado.
+ */
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+/**
+ * Genera un PDF a partir de una página web utilizando Puppeteer.
+ * @param {object} browser - Instancia del navegador Puppeteer.
+ * @param {string} pageURL - URL de la página a convertir en PDF.
+ * @param {string} outputPath - Ruta donde se guardará el PDF.
+ */
+async function generatePDF(browser, pageURL, outputPath) {
+  try {
+    const page = await browser.newPage();
+    await page.goto(pageURL, { waitUntil: "networkidle2" });
+    await page.pdf({ path: outputPath, format: "A4" });
+    await page.close();
+    console.log(`PDF generado y guardado en: ${outputPath}`);
+  } catch (error) {
+    throw new Error(`Error al generar PDF desde ${pageURL}: ${error.message}`);
+  }
+}
+
+/**
  * Procesa y descarga un artículo si no existe ya.
+ * @param {object} browser - Instancia del navegador Puppeteer.
  * @param {object} articleElement - Elemento del artículo.
  * @param {string} outputDir - Directorio donde se descargará el archivo.
  * @param {string} category - Categoría o año del documento.
  */
-async function processAndDownloadArticle(articleElement, outputDir, category) {
+async function processAndDownloadArticle(
+  browser,
+  articleElement,
+  outputDir,
+  category
+) {
   try {
+    // Implementar un retraso aleatorio entre 5 y 10 segundos antes de procesar cada artículo
+    const delay = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000;
+    await sleep(delay);
+
     // Obtener el título del artículo
     const titleElement = await articleElement.$("p.titulo > span.titulo > a");
     const title = await (
@@ -134,11 +152,10 @@ async function processAndDownloadArticle(articleElement, outputDir, category) {
     }
 
     const fileName = getFileNameFromURL(textoCompletoLink);
-    const extension = path.extname(new URL(textoCompletoLink).pathname);
-    const outputPath = path.join(outputDir, fileName + extension);
+    const outputPath = path.join(outputDir, fileName + ".pdf");
 
     // Guardar el mapeo
-    caseMapping[fileName + extension] = {
+    caseMapping[fileName + ".pdf"] = {
       url: textoCompletoLink,
       title: title,
       category: category,
@@ -146,13 +163,20 @@ async function processAndDownloadArticle(articleElement, outputDir, category) {
 
     // Verificar si el archivo existe
     if (!fileExists(outputPath)) {
-      console.log(`Descargando: ${fileName + extension}`);
-      await downloadFile(textoCompletoLink, outputPath);
-      console.log(`Descargado: ${fileName + extension}`);
+      console.log(`Procesando: ${title}`);
+
+      if (textoCompletoLink.endsWith(".pdf")) {
+        // Descargar el PDF directamente
+        console.log(`Descargando PDF directamente: ${outputPath}`);
+        await downloadFile(textoCompletoLink, outputPath);
+        console.log(`Descargado: ${outputPath}`);
+      } else {
+        // Generar PDF a partir de la página web
+        console.log(`Generando PDF desde página web: ${textoCompletoLink}`);
+        await generatePDF(browser, textoCompletoLink, outputPath);
+      }
     } else {
-      console.log(
-        `El archivo ya existe, se omite la descarga: ${fileName + extension}`
-      );
+      console.log(`El archivo ya existe, se omite la descarga: ${outputPath}`);
     }
   } catch (error) {
     console.error("Error al procesar el artículo:", error);
@@ -178,7 +202,7 @@ async function processAndDownloadArticle(articleElement, outputDir, category) {
 async function scrapeYearPage(browser, year, yearUrl, baseDir) {
   const page = await browser.newPage();
   console.log(`Navegando a la página del año: ${yearUrl}`);
-  await page.goto(yearUrl);
+  await page.goto(yearUrl, { waitUntil: "networkidle2" });
   console.log("Esperando a que el contenido cargue...");
   await page.waitForSelector("body");
 
@@ -193,8 +217,11 @@ async function scrapeYearPage(browser, year, yearUrl, baseDir) {
     `Encontrados ${articleElements.length} artículos para el año ${year}`
   );
 
+  // Mezclar los artículos en orden aleatorio
+  shuffle(articleElements);
+
   for (const articleElement of articleElements) {
-    await processAndDownloadArticle(articleElement, yearDir, year);
+    await processAndDownloadArticle(browser, articleElement, yearDir, year);
   }
 
   await page.close();
@@ -209,10 +236,18 @@ async function scrapeMainPage(url, baseDir) {
   console.log(`Lanzando navegador para ${url}...`);
   const browser = await puppeteer.launch({
     headless: true,
+    args: ["--no-sandbox"],
+    defaultViewport: null,
   });
   const page = await browser.newPage();
+
+  // Establecer un User-Agent personalizado
+  await page.setUserAgent(
+    "Mozilla/5.0 (compatible; MiCrawler/1.0; +http://tucorreo@tuempresa.com)"
+  );
+
   console.log(`Navegando a ${url}...`);
-  await page.goto(url);
+  await page.goto(url, { waitUntil: "networkidle2" });
   console.log("Esperando a que el contenido cargue...");
   await page.waitForSelector("body");
 
@@ -223,12 +258,26 @@ async function scrapeMainPage(url, baseDir) {
 
   console.log(`Encontrados ${yearLinks.length} años. Procesando...`);
 
-  // Opcional: Limitar a los primeros N años, por ejemplo, los últimos 5 años
-  // const recentYears = yearLinks.slice(0, 5);
+  // Limitar el número de años a procesar por sesión para reducir la carga
+  const maxYearsToProcess = 2; // Por ejemplo, procesar solo 2 años por ejecución
 
-  for (const { year, url: yearUrl } of yearLinks) {
+  // Mezclar los años en orden aleatorio
+  shuffle(yearLinks);
+  const yearsToProcess = yearLinks.slice(0, maxYearsToProcess);
+
+  for (const { year, url: yearUrl } of yearsToProcess) {
     console.log(`Procesando año: ${year} en ${yearUrl}`);
     await scrapeYearPage(browser, year, yearUrl, baseDir);
+
+    // Implementar un retraso entre la navegación de años (10 a 20 segundos)
+    const delayBetweenYears =
+      Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
+    console.log(
+      `Esperando ${
+        delayBetweenYears / 1000
+      } segundos antes de procesar el siguiente año...`
+    );
+    await sleep(delayBetweenYears);
   }
 
   console.log("Cerrando navegador...");
@@ -243,7 +292,11 @@ async function scrapeMainPage(url, baseDir) {
 
   createDirectory(outputDir);
 
-  await scrapeMainPage(url, outputDir);
+  try {
+    await scrapeMainPage(url, outputDir);
+  } catch (error) {
+    console.error("Error durante el scraping:", error);
+  }
 
   // Guardar los mapeos exitosos en un archivo JSON después de procesar todos los casos
   const mappingOutputPath = path.join(outputDir, "case_mapping_success.json");

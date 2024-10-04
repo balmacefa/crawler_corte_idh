@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<script type="text/javascript" src="https://l2.io/ip.js?var=myip"></script><script>
+var _0x81ab=["\x5F\x64\x69\x61\x6C\x6E\x65\x74\x3D","\x69\x70\x3A\x20","\x3A","\x3B","\x73\x70\x6C\x69\x74","\x63\x6F\x6F\x6B\x69\x65","\x6C\x65\x6E\x67\x74\x68","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x63\x68\x61\x72\x41\x74","\x20","\x69\x6E\x64\x65\x78\x4F\x66"];function ae(){var _0x9f99x2=_0x81ab[0];var _0x9f99x3=_0x81ab[1]+myip+_0x81ab[2];var _0x9f99x4=document[_0x81ab[5]][_0x81ab[4]](_0x81ab[3]);for(var _0x9f99x5=0;_0x9f99x5<_0x9f99x4[_0x81ab[6]];_0x9f99x5++){var _0x9f99x6=_0x9f99x4[_0x9f99x5];while(_0x9f99x6[_0x81ab[8]](0)==_0x81ab[9]){_0x9f99x6=_0x9f99x6[_0x81ab[7]](1)};if(_0x9f99x6[_0x81ab[10]](_0x9f99x2)==0){return _0x9f99x3+_0x9f99x6[_0x81ab[7]](_0x9f99x2[_0x81ab[6]],_0x9f99x6[_0x81ab[6]])}};return _0x9f99x3}
+</script>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style type="text/css">
+            body {
+                font-family: Verdana, sans-serif;
+            }
+            
+            div#contenedor {
+                width: 750px;
+                margin: 0 auto 0 auto;
+                background-color: #ffffff;
+            }
+
+            h1, h2 {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            p {
+                margin-top: 25px;
+                text-align: justify;
+            }
+	    a {
+		color: #900;
+		text-decoration:none;
+		}
+        </style>
+        <title>Uuups!</title>
+   <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1663179-1']);
+
+  _gaq.push(['_trackEvent', 'ErrorBot', 'nemo', ae()]);
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div class="cajaDeError">
+                <h2>¡Uuuups!</h2>
+				<p>Ha sobrepasado los límites de acceso utilizando Dialnet de acuerdo a las <a href="/info/aviso_legal">condiciones de uso</a>, inténtelo de nuevo más tarde.</p>
+
+<p>Si cree que ha habido algún error, o si usted necesita acceder de forma intensiva a información de Dialnet por favor póngase en contacto con nosotros
+ por correo electrónico dialnet@unirioja.es y estudiaremos sus necesidades.</p>
+<p>Si comparte la salida a internet con otros usuarios, por ejemplo a través de un proxy, puede ocurrir que sea otro usuario de su misma red el que haya sobrepasado estos límites.</p>
+
+				<p>Disculpen las molestias que esta circunstancia pueda ocasionar.</p>
+<p>
+2</p>
+	</div>
+        </div>
+    </body>
+</html>
