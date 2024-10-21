@@ -38,6 +38,13 @@
       "name": "Launch crawler_Revista_Latinoamericana_de_Psicología",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\crawler_Revista_Latinoamericana_de_Psicología.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Google express",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\google_browser\\app.js"
     }
   ]
 }
