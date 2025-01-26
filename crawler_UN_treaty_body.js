@@ -5,32 +5,32 @@ const http = require("http");
 const https = require("https");
 
 /**
- * Creates a directory if it does not already exist.
- * @param {string} dir - The path of the directory to be created.
+ * Crea un directorio si no existe.
+ * @param {string} dir - La ruta del directorio a crear.
  */
 function createDirectory(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
-    console.log(`Created directory: ${dir}`);
+    console.log(`Creado directorio: ${dir}`);
   } else {
-    console.log(`Directory already exists: ${dir}`);
+    console.log(`El directorio ya existe: ${dir}`);
   }
 }
 
 /**
- * Extracts the file name from a URL.
- * @param {string} url - The URL from which to extract the file name.
- * @returns {string} The extracted file name.
+ * Extrae el nombre del archivo desde una URL.
+ * @param {string} url - La URL de la cual extraer el nombre del archivo.
+ * @returns {string} El nombre del archivo extraído.
  */
 function getFileNameFromURL(url) {
-  return url.split("/").pop();
+  return url.split("/").pop().split("?")[0]; // Eliminamos parámetros query si los hay
 }
 
 /**
- * Downloads a file from a given URL and saves it to a specified path.
- * @param {string} fileURL - The URL of the file to download.
- * @param {string} outputPath - The path where the file will be saved.
- * @returns {Promise<void>} A promise that resolves when the download is complete.
+ * Descarga un archivo desde una URL y lo guarda en una ruta específica.
+ * @param {string} fileURL - La URL del archivo a descargar.
+ * @param {string} outputPath - La ruta donde se guardará el archivo.
+ * @returns {Promise<void>} Una promesa que se resuelve cuando la descarga termina.
  */
 function downloadFile(fileURL, outputPath) {
   return new Promise((resolve, reject) => {
@@ -38,87 +38,136 @@ function downloadFile(fileURL, outputPath) {
     const protocol = fileURL.startsWith("https") ? https : http;
     protocol
       .get(fileURL, (response) => {
+        if (response.statusCode !== 200) {
+          return reject(
+            new Error(
+              `Falló la descarga. Estado del servidor: ${response.statusCode}`
+            )
+          );
+        }
         response.pipe(file);
         file.on("finish", () => {
           file.close(resolve);
         });
       })
       .on("error", (error) => {
-        fs.unlink(outputPath); // Delete the file asynchronously on error
+        fs.unlink(outputPath, () => {}); // Eliminar el archivo en caso de error
         reject(error);
       });
   });
 }
 
 /**
- * Checks if a file exists at a given path.
- * @param {string} filePath - The path of the file to check.
- * @returns {boolean} True if the file exists, false otherwise.
+ * Verifica si un archivo existe en una ruta dada.
+ * @param {string} filePath - La ruta del archivo a verificar.
+ * @returns {boolean} True si el archivo existe, false en caso contrario.
  */
 function fileExists(filePath) {
   return fs.existsSync(filePath);
 }
 
-async function handleViewDocumentPage(url, baseDir) {
-  //
+/**
+ * Maneja la página de documentos para descargar PDFs en inglés y español.
+ * @param {object} browser - La instancia de Puppeteer Browser.
+ * @param {string} viewDocURL - La URL de la página "View Document".
+ * @param {string} baseDir - El directorio base donde se guardarán los archivos descargados.
+ */
+async function handleViewDocumentPage(browser, viewDocURL, baseDir) {
+  try {
+    const pdfDir = path.join(baseDir, "pdf");
+
+    // Crear el directorio para PDFs si no existe
+    createDirectory(pdfDir);
+
+    // Crear una nueva página para manejar la descarga
+    const page = await browser.newPage();
+    console.log(`\nNavegando a la página de View Document: ${viewDocURL}`);
+    await page.goto(viewDocURL, { waitUntil: "networkidle2" });
+
+    // Definir los idiomas a procesar
+    const idiomas = ["English", "Español"];
+
+    for (const idioma of idiomas) {
+      console.log(`\nProcesando el idioma: ${idioma}`);
+
+      // Encontrar la fila <tr> que contiene el idioma actual
+      const [fila] = await page.$x(`//tr[td[text()='${idioma}']]`);
+
+      if (fila) {
+        console.log(`Fila encontrada para el idioma: ${idioma}`);
+
+        // Dentro de la fila, encontrar el enlace <a> con title que contiene 'pdf'
+        const [enlacePdf] = await fila.$x(`.//a[contains(@title, 'pdf')]`);
+
+        if (enlacePdf) {
+          const href = await enlacePdf.evaluate((el) => el.href);
+          console.log(`Descargando PDF para ${idioma}: ${href}`);
+
+          const fileName = getFileNameFromURL(href);
+          const outputPath = path.join(pdfDir, `${idioma}_${fileName}`);
+
+          if (!fileExists(outputPath)) {
+            await downloadFile(href, outputPath);
+            console.log(`Descargado: ${outputPath}`);
+          } else {
+            console.log(`El archivo ya existe: ${outputPath}`);
+          }
+        } else {
+          console.log(`No se encontró enlace PDF para el idioma: ${idioma}`);
+        }
+      } else {
+        console.log(`No se encontró una fila para el idioma: ${idioma}`);
+      }
+    }
+
+    // Cerrar la página después de procesarla
+    await page.close();
+    console.log(`Finalizado el procesamiento de: ${viewDocURL}`);
+  } catch (error) {
+    console.error(`Error en handleViewDocumentPage: ${error}`);
+  }
 }
 
 /**
- * Scrapes a website, downloads, and saves PDF and DOC files.
- * @param {string} url - The URL of the website to scrape.
- * @param {string} baseDir - The base directory to save downloaded files.
+ * Scrapea un sitio web, descarga y guarda archivos PDF.
+ * @param {string} url - La URL del sitio web a scrapear.
+ * @param {string} baseDir - El directorio base para guardar los archivos descargados.
  */
 async function scrapeWebsite(url, baseDir) {
   try {
     const pdfDir = path.join(baseDir, "pdf");
+    // const docDir = path.join(baseDir, "doc"); // Descomenta si necesitas manejar documentos DOC
 
-    // Create PDF and DOC directories
+    // Crear el directorio para PDFs (y DOC si es necesario)
     createDirectory(pdfDir);
-    createDirectory(docDir);
+    // createDirectory(docDir); // Descomenta si necesitas manejar documentos DOC
 
-    console.log(`Launching browser for ${url}...`);
-    // const browser = await puppeteer.launch();
-
-    // const caps = {
-    //   browser: "chrome", // You can choose `chrome`, `edge` or `firefox` in this capability
-    //   browser_version: "latest", // We support v83 and above. You can choose `latest`, `latest-beta`, `latest-1`, `latest-2` and so on, in this capability
-    //   os: "os x",
-    //   os_version: "big sur",
-    //   build: "puppeteer-build-1",
-    //   name: "My first Puppeteer test", // The name of your test and build. See browserstack.com/docs/automate/puppeteer/organize tests for more details
-    //   "browserstack.username":
-    //     process.env.BROWSERSTACK_USERNAME || "fabianbalmaceda_eDsvb6",
-    //   "browserstack.accessKey":
-    //     process.env.BROWSERSTACK_ACCESS_KEY || "A4LaJEd5DMxdCrQBB7m1",
-    //   headless: false, // Set to false to see the browser UI
-    // };
-    // const browser = await puppeteer.connect({
-    //   browserWSEndpoint: `wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(
-    //     JSON.stringify(caps)
-    //   )}`, // The BrowserStack CDP endpoint gives you a `browser` instance based on the `caps` that you specified
-    // });
+    console.log(`Lanzando navegador para ${url}...`);
 
     const browser = await puppeteer.launch({
-      headless: false, // Launches a visible browser window
-      args: ["--start-maximized"], // Optional: Starts the browser maximized
-      defaultViewport: null, // Ensures the viewport matches the browser window size
-      // You can add other launch options as needed
+      headless: false, // Ejecuta en modo visible para ver las acciones
+      args: ["--start-maximized"], // Opcional: Inicia el navegador maximizado
+      defaultViewport: null, // Asegura que el viewport coincida con el tamaño de la ventana
+      // Puedes agregar otras opciones de lanzamiento según sea necesario
     });
 
     const page = await browser.newPage();
-    console.log(`Navigating to ${url}...`);
-    await page.goto(url);
-    console.log("Waiting for content to load...");
+    console.log(`Navegando a ${url}...`);
+    await page.goto(url, { waitUntil: "networkidle2" });
+    console.log("Esperando a que el contenido cargue...");
 
+    // 1. Hacer clic en el <input> con value="10"
     const selectorInput = 'input[value="10"]';
+    console.log(`Buscando el elemento ${selectorInput}...`);
     await page.waitForSelector(selectorInput, { visible: true, timeout: 5000 });
 
+    console.log(`Haciendo clic en el elemento ${selectorInput}...`);
     await page.click(selectorInput);
 
+    console.log("Esperando 500 ms...");
     await page.waitForTimeout(500); // Espera 500 ms
 
-    // /////////////////////////////////////////////////////////////////////////////////////////////////////
-    // 7. Hacer clic en el elemento <li> con el texto 'All'
+    // 2. Hacer clic en el elemento <li> con el texto 'All'
     const textoLi = "All";
     console.log(
       `Buscando y haciendo clic en el elemento <li> con el texto '${textoLi}'...`
@@ -138,13 +187,10 @@ async function scrapeWebsite(url, baseDir) {
       );
     }
 
-    // 8. Esperar 500 milisegundos adicionales si es necesario
     console.log("Esperando 500 ms adicionales...");
     await page.waitForTimeout(500); // Espera 500 ms
 
-    // /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // 4. Obtener todos los enlaces <a> con el texto 'View document'
+    // 3. Obtener todos los enlaces <a> con el texto 'View document'
     const textoLink = "View document";
     console.log(
       `Buscando todos los enlaces <a> que contienen el texto '${textoLink}'...`
@@ -163,25 +209,23 @@ async function scrapeWebsite(url, baseDir) {
         })
       );
 
-      hrefs.forEach((href, index) => {
-        //
-        console.log(`${index + 1}: ${href}`);
-      });
+      // Utilizar un ciclo for...of para manejar asincronía correctamente
+      for (const href of hrefs) {
+        await handleViewDocumentPage(browser, href, baseDir);
+      }
 
       // Opcional: Guardar en un archivo JSON
-      // const fs = require('fs');
       // fs.writeFileSync('enlaces.json', JSON.stringify(hrefs, null, 2));
     } else {
       console.log(`No se encontraron enlaces <a> con el texto '${textoLink}'.`);
     }
 
-    // /////////////////////////////////////////////////////////////////////////////////////////////////////
-    console.log("Closing browser...");
+    // 4. Cerrar el navegador
+    console.log("Cerrando navegador...");
     await browser.close();
-    console.log(`Finished scraping ${url}.`);
+    console.log(`Finalizado el scraping de ${url}.`);
   } catch (error) {
-    console.error("error", error);
-    console.error(error);
+    console.error("Error:", error);
   }
 }
 
