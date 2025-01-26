@@ -1,5 +1,5 @@
 // crawlerModule.js
-
+const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
 
 let browserInstance;
@@ -31,7 +31,8 @@ async function initBrowser() {
   browserLaunching = true;
   try {
     browserInstance = await puppeteer.launch({
-      headless: true,
+      headless: "new", // Cambiado a "new"
+      // headless: false, // Cambiado a "new"
       args: ["--no-sandbox"],
       defaultViewport: null,
     });
@@ -111,17 +112,17 @@ async function queryGoogle(query) {
     // Esperar a que los resultados carguen
     await page.waitForNavigation({ waitUntil: "networkidle2" });
 
-    // Extraer los enlaces de los resultados de búsqueda
-    const links = await page.evaluate(() => {
-      const results = [];
-      const elements = document.querySelectorAll("div.g h3 a");
-      for (const element of elements) {
-        results.push(element.href);
-      }
-      return results;
-    });
+    // Esperar a que el div #main esté disponible
+    await page.waitForSelector("#main");
 
-    return links;
+    // Obtener el código HTML del div #main
+    const mainHTML = await page.$eval("#main", (element) => element.innerHTML);
+
+    // Usar la función parseGoogleResults para extraer los datos
+    const searchResults = parseGoogleResults(mainHTML);
+
+    // Retornar los resultados
+    return searchResults;
   } catch (error) {
     console.error("Error en queryGoogle:", error);
 
@@ -139,6 +140,38 @@ async function queryGoogle(query) {
       await page.close();
     }
   }
+}
+
+/**
+ * Analiza el HTML y extrae los resultados de búsqueda de Google.
+ * @param {string} html - El contenido HTML del div #main.
+ * @returns {Array<Object>} - Lista de objetos con título, descripción y enlace.
+ */
+/**
+ * Analiza el HTML y extrae los resultados de búsqueda de Google sin depender de clases CSS específicas.
+ * @param {string} html - El contenido HTML del div #main.
+ * @returns {Array<Object>} - Lista de objetos con título, descripción y enlace.
+ */
+function parseGoogleResults(htmlContent) {
+  const $ = cheerio.load(htmlContent);
+
+  // Eliminar imágenes en base64
+  $("img").each((index, element) => {
+    const src = $(element).attr("src");
+    if (src && src.startsWith("data:image")) {
+      $(element).remove();
+    }
+  });
+
+  // Eliminar atributos de clase
+  $("[class]").removeAttr("class");
+
+  // Eliminar elementos y atributos de estilo CSS
+  $("style").remove();
+  $("[style]").removeAttr("style");
+
+  // Devolver el HTML limpio como cadena
+  return $.html();
 }
 
 /**

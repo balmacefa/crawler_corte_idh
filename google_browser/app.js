@@ -29,8 +29,8 @@ app.post("/search", async (req, res) => {
     return res.status(400).json({ error: 'Se requiere el parámetro "query".' });
   }
   try {
-    const results = await queryGoogle(query);
-    res.json({ results });
+    const html_content = await queryGoogle(query);
+    res.json({ html_content });
   } catch (error) {
     console.error("Error en /search:", error);
     res.status(500).json({ error: "Error al realizar la búsqueda." });
@@ -44,11 +44,13 @@ app.get("/search", async (req, res) => {
     return res.status(400).json({ error: 'Se requiere el parámetro "query".' });
   }
   try {
-    const results = await queryGoogle(query);
-    res.json({ results });
+    const html_content = await queryGoogle(query);
+    res.json({ html_content });
   } catch (error) {
     console.error("Error en /search:", error);
-    res.status(500).json({ error: "Error al realizar la búsqueda." });
+    res
+      .status(500)
+      .json({ error: "Error al realizar la búsqueda.", data: error });
   }
 });
 

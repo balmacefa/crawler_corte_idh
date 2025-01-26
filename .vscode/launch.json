@@ -7,6 +7,13 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch crawler_UN_treaty_body",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\crawler_UN_treaty_body.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch crawler_corte_idh",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\crawler_corte_idh.js"
@@ -45,6 +52,13 @@
       "name": "Google express",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\google_browser\\app.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "ohchr express",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\ohchr\\crawler.js"
     }
   ]
 }

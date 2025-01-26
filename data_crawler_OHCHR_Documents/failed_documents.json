@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://www.ohchr.org/es/documents/concluding-observations/catcausco6-concluding-observations-sixth-periodic-report",
+    "error": "Waiting for selector `article.oh-node.node-document` failed: Waiting failed: 30000ms exceeded"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  },
+  {
+    "url": "Desconocido",
+    "error": "Protocol error (DOM.describeNode): Cannot find context with specified id"
+  }
+]
