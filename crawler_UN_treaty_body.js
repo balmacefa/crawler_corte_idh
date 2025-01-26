@@ -142,6 +142,28 @@ async function handleViewDocumentPage(browser, viewDocURL, baseDir) {
           }
         } else {
           console.log(`No se encontró enlace PDF para el idioma: ${idioma}`);
+
+          const [enlaceDoc] = await fila.$x(`.//a[contains(@title, 'doc')]`);
+
+          if (enlaceDoc) {
+            const href = await enlaceDoc.evaluate((el) => el.href);
+            console.log(`Descargando DOC para ${idioma}: ${href}`);
+
+            const fileName = getFileNameFromURL(href, idioma).replace(
+              ".pdf",
+              ".doc"
+            );
+            const outputPath = path.join(pdfDir, fileName);
+
+            if (!fileExists(outputPath)) {
+              await downloadFile(href, outputPath);
+              console.log(`Descargado: ${outputPath}`);
+            } else {
+              console.log(`El archivo ya existe: ${outputPath}`);
+            }
+          } else {
+            console.log(`No se encontró enlace DOC para el idioma: ${idioma}`);
+          }
         }
       } else {
         console.log(`No se encontró una fila para el idioma: ${idioma}`);
