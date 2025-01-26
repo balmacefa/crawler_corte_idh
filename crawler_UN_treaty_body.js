@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 const https = require("https");
+const crypto = require("crypto"); // Importar crypto para generar hashes
 
 /**
  * Crea un directorio si no existe.
@@ -18,12 +19,39 @@ function createDirectory(dir) {
 }
 
 /**
- * Extrae el nombre del archivo desde una URL.
- * @param {string} url - La URL de la cual extraer el nombre del archivo.
- * @returns {string} El nombre del archivo extraído.
+ * Extrae un nombre de archivo único basado en el hash de la URL y agrega un prefijo de idioma.
+ * @param {string} url - La URL del documento.
+ * @param {string} idioma - El idioma del documento (e.g., 'English', 'Español').
+ * @returns {string} El nombre del archivo generado.
  */
-function getFileNameFromURL(url) {
-  return url.split("/").pop().split("?")[0]; // Eliminamos parámetros query si los hay
+function getFileNameFromURL(url, idioma) {
+  try {
+    // Generar un hash SHA-1 de la URL
+    const hash = crypto.createHash("sha1").update(url).digest("hex");
+
+    // Determinar el prefijo basado en el idioma
+    let prefix = "";
+    if (idioma.toLowerCase() === "english") {
+      prefix = "English_";
+    } else if (
+      idioma.toLowerCase() === "español" ||
+      idioma.toLowerCase() === "spanish"
+    ) {
+      prefix = "Español_";
+    } else {
+      prefix = `${idioma}_`; // Prefijo por defecto si el idioma no es reconocido
+    }
+
+    // Asumimos que el archivo es PDF, puedes ajustar esto si necesitas otros formatos
+    const fileName = `${prefix}${hash}.pdf`;
+
+    return fileName;
+  } catch (error) {
+    console.error(`Error en getFileNameFromURL: ${error.message}`);
+    // Fallback: usar un nombre genérico con hash
+    const hash = crypto.createHash("sha1").update(url).digest("hex");
+    return `Document_${hash}.pdf`;
+  }
 }
 
 /**
@@ -103,8 +131,8 @@ async function handleViewDocumentPage(browser, viewDocURL, baseDir) {
           const href = await enlacePdf.evaluate((el) => el.href);
           console.log(`Descargando PDF para ${idioma}: ${href}`);
 
-          const fileName = getFileNameFromURL(href);
-          const outputPath = path.join(pdfDir, `${idioma}_${fileName}`);
+          const fileName = getFileNameFromURL(href, idioma);
+          const outputPath = path.join(pdfDir, fileName);
 
           if (!fileExists(outputPath)) {
             await downloadFile(href, outputPath);
